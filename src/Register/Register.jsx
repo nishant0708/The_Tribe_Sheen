@@ -262,7 +262,12 @@ const Register = () => {
                                     <label className="form-label">Front Facing</label>
                                     <div {...getFrontProps()} className="dropzone form-input">
                                         <input {...getFrontInputProps()} required />
-                                        <p>Drag n drop a file here, or click to select file</p>
+                                        <p>
+                                    <span className='pinktxt'>
+                                        Browse Files <br />
+                                    </span>
+                                    Drag n drop a file here
+                                </p>
                                         {fileNames.frontFacing && <p>Selected file: {fileNames.frontFacing}</p>}
                                     </div>
                                 </div>
@@ -271,7 +276,12 @@ const Register = () => {
                                     <label className="form-label">Left Profile</label>
                                     <div {...getLeftProps()} className="dropzone form-input">
                                         <input {...getLeftInputProps()} required />
-                                        <p>Drag n drop a file here, or click to select file</p>
+                                        <p>
+                                    <span className='pinktxt'>
+                                        Browse Files <br />
+                                    </span>
+                                    Drag n drop a file here
+                                </p>
                                         {fileNames.leftProfile && <p>Selected file: {fileNames.leftProfile}</p>}
                                     </div>
                                 </div>
@@ -280,7 +290,12 @@ const Register = () => {
                                     <label className="form-label">Right Profile</label>
                                     <div {...getRightProps()} className="dropzone form-input">
                                         <input {...getRightInputProps()} required />
-                                        <p>Drag n drop a file here, or click to select file</p>
+                                        <p>
+                                    <span className='pinktxt'>
+                                        Browse Files <br />
+                                    </span>
+                                    Drag n drop a file here
+                                </p>
                                         {fileNames.rightProfile && <p>Selected file: {fileNames.rightProfile}</p>}
                                     </div>
                                 </div>
@@ -292,12 +307,17 @@ const Register = () => {
                             <label className="form-label">ID Proof</label>
                             <div {...getIdProps()} className="dropzone form-input idproof">
                                 <input {...getIdInputProps()} required />
-                                <p>Drag n drop a file here, or click to select file</p>
+                                <p>
+                                    <span className='pinktxt'>
+                                        Browse Files <br />
+                                    </span>
+                                    Drag n drop a file here
+                                </p>
                                 {fileNames.idProof && <p>Selected file: {fileNames.idProof}</p>}
                             </div>
                         </div>
 
-                        <div className="form-field">
+                        <div className="">
                             <label className="form-label day">Which day would be suitable to you for audition:</label>
                             <input
                                 type="date"
@@ -324,9 +344,9 @@ const Register = () => {
                                 ))}
                             </div>
                         </div>
-<div className="form-field">
-<p className="form-label day">Registration Fee: <span className='black'>Rs. 200/-</span></p>  
-</div>
+                        <div className="form-field">
+                            <p className="form-label day">Registration Fee: <span className='black'>Rs. 200/-</span></p>
+                        </div>
                     </div>
                     <button type="submit" className="submit-button">
                         Submit
