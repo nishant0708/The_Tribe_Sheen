@@ -5,6 +5,7 @@ import { IoIosMail } from 'react-icons/io'
 import { IoCall } from 'react-icons/io5'
 import './Contact.css'
 const Contact = () => {
+
   return (
     <div className="Contact_us">
       <div className="Newsletter">
@@ -57,6 +58,7 @@ const Contact = () => {
       </div>
     </div>
   )
+
 }
 
 export default Contact
