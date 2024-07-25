@@ -2,4 +2,6 @@
 
 body {
   font-family: 'Lato', sans-serif;
+  margin: 0px !important;
+  padding: 0px;
 }
