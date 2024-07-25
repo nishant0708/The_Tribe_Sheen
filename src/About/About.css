@@ -1,0 +1,76 @@
+.About_us {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  height: 30vh;
+  background:
+    linear-gradient(rgba(232, 201, 212, 0.2) 0%, rgba(255, 255, 255, 1)),
+    url('./assets/girls.png') center/cover no-repeat;
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* position: relative; */
+}
+.about_main{
+    width: 100%;
+    position: relative;
+    background-color: #ff9bbd;
+}
+.about_content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top:200px;
+    /* background-color: #ff9bbd; */
+}
+.About_us h2 {
+  font-size: 58px;
+  margin:0
+  
+}
+.About_us p {
+  text-align: center;
+  font-size: 17px;
+  color: #8d311e;
+  height: 10vh;
+  
+ 
+  
+  margin: 0;
+  padding: 20px 50px;
+}
+@media (max-width: 660px) {
+  .About_us h2 {
+    font-size: 30px;
+    bottom:-20px;
+  }
+  .About_us p{
+    height: 8vh;
+    font-size: 14px;
+    padding: 20px 40px;
+  }
+}
+@media (max-width: 570px) {
+    
+    .About_us h2 {
+      font-size: 28px;
+     
+    }
+    .About_us p{
+      height:6vh;
+      font-size:12px;
+      padding: 20px 30px;
+    }
+  }
+  @media (max-width: 500px) {
+    
+    .About_us p{
+      height:10vh;
+      font-size:11px;
+      padding: 15px 20px;
+    }
+  }
