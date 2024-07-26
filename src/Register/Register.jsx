@@ -46,63 +46,78 @@ const Register = () => {
     const [currentImageType, setCurrentImageType] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
     const [showCropModal, setShowCropModal] = useState(false);
+    const [idProofPreview, setIdProofPreview] = useState(null);
+    const [errors, setErrors] = useState({});
 
     const onDrop = useCallback((acceptedFiles, photoType) => {
-    const file = acceptedFiles[0];
-    setCurrentImage(URL.createObjectURL(file));
-    setCurrentImageType(photoType);
-    setShowCropModal(true);
-  }, []);
+        const file = acceptedFiles[0];
+        setCurrentImage(URL.createObjectURL(file));
+        setCurrentImageType(photoType);
+        setShowCropModal(true);
+    }, []);
 
     const onDropIdProof = (acceptedFiles) => {
+        const file = acceptedFiles[0];
         setFormData((prevState) => ({
             ...prevState,
-            idProof: acceptedFiles[0],
+            idProof: file,
         }));
         setFileNames((prevState) => ({
             ...prevState,
-            idProof: acceptedFiles[0].name,
+            idProof: file.name,
         }));
+        setIdProofPreview(URL.createObjectURL(file));
     };
 
     const { getRootProps: getFrontProps, getInputProps: getFrontInputProps } = useDropzone({
-        accept: 'image/*',
+        accept: {'image/*': []},
+        name: "Front",
         onDrop: (acceptedFiles) => onDrop(acceptedFiles, 'frontFacing'),
     });
 
     const { getRootProps: getLeftProps, getInputProps: getLeftInputProps } = useDropzone({
-        accept: 'image/*',
+        accept: {'image/*': []},
         onDrop: (acceptedFiles) => onDrop(acceptedFiles, 'leftProfile'),
     });
 
     const { getRootProps: getRightProps, getInputProps: getRightInputProps } = useDropzone({
-        accept: 'image/*',
+        accept: {'image/*': []},
         onDrop: (acceptedFiles) => onDrop(acceptedFiles, 'rightProfile'),
     });
 
     const { getRootProps: getIdProps, getInputProps: getIdInputProps } = useDropzone({
-        accept: 'image/*',
+        accept: {'image/*': []},
         onDrop: onDropIdProof,
     });
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
+    
+        if (name === 'contactNumber') {
+            if (!validatePhoneNumber(value)) {
+                setErrors(prev => ({ ...prev, contactNumber: 'Please enter a valid 10-digit phone number' }));
+            } else {
+                setErrors(prev => ({ ...prev, contactNumber: null }));
+            }
+        }
     };
-
     const handleSizeSelect = (size) => {
         setFormData({ ...formData, confidentSize: size });
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(formData);
+        if (!validatePhoneNumber(formData.contactNumber)) {
+            setErrors(prev => ({ ...prev, contactNumber: 'Please enter a valid 10-digit phone number' }));
+            return;
+        }
     };
     const handleCropCancel = () => {
         setShowCropModal(false);
         setCurrentImage(null);
         setCurrentImageType(null);
-      };
+    };
 
     const onCropComplete = useCallback((croppedArea, croppedAreaPixels) => {
         setCroppedAreaPixels(croppedAreaPixels);
@@ -144,42 +159,49 @@ const Register = () => {
     };
 
     const handleSaveCroppedImage = async () => {
-    if (currentImage && croppedAreaPixels) {
-      setIsLoading(true);
-      try {
-        const croppedImageBlob = await getCroppedImg(currentImage, croppedAreaPixels);
-        const croppedImageUrl = URL.createObjectURL(croppedImageBlob);
+        if (currentImage && croppedAreaPixels) {
+            setIsLoading(true);
+            try {
+                const croppedImageBlob = await getCroppedImg(currentImage, croppedAreaPixels);
+                const croppedImageUrl = URL.createObjectURL(croppedImageBlob);
 
-        setFormData(prevState => ({
-          ...prevState,
-          photos: {
-            ...prevState.photos,
-            [currentImageType]: croppedImageBlob,
-          },
-          photoUrls: {
-            ...prevState.photoUrls,
-            [currentImageType]: croppedImageUrl,
-          },
-        }));
+                setFormData(prevState => ({
+                    ...prevState,
+                    photos: {
+                        ...prevState.photos,
+                        [currentImageType]: croppedImageBlob,
+                    },
+                    photoUrls: {
+                        ...prevState.photoUrls,
+                        [currentImageType]: croppedImageUrl,
+                    },
+                }));
 
-        setShowCropModal(false);
-        setCurrentImage(null);
-        setCurrentImageType(null);
-      } catch (e) {
-        console.error('Error cropping image:', e);
-      } finally {
-        setIsLoading(false);
-      }
-    }
-  };
+                setShowCropModal(false);
+                setCurrentImage(null);
+                setCurrentImageType(null);
+            } catch (e) {
+                console.error('Error cropping image:', e);
+            } finally {
+                setIsLoading(false);
+            }
+        }
+    };
     useEffect(() => {
         return () => {
             Object.values(formData.photoUrls).forEach(url => {
                 if (url) URL.revokeObjectURL(url);
             });
             if (currentImage) URL.revokeObjectURL(currentImage);
+            if (idProofPreview) URL.revokeObjectURL(idProofPreview);
         };
-    }, [formData.photoUrls, currentImage]);
+    }, [formData.photoUrls, currentImage, idProofPreview]);
+
+    //Phone nmber validation
+    const validatePhoneNumber = (phoneNumber) => {
+        const phoneRegex = /^[0-9]{10}$/;  // Assumes a 10-digit phone number
+        return phoneRegex.test(phoneNumber);
+    };
 
     return (
         <div className="registerContainer">
@@ -200,7 +222,7 @@ const Register = () => {
                                 className="form-select smaller-space"
                                 required
                             >
-                                <option value="">Category</option>
+                                {/* <option value="">Category</option> */}
                                 <option value="Mrs">Mrs</option>
                                 <option value="Ms">Ms</option>
                             </select>
@@ -242,17 +264,18 @@ const Register = () => {
                         </div>
 
                         <div className="form-field">
-                            <label className="form-label">Contact Number</label>
-                            <input
-                                type="text"
-                                name="contactNumber"
-                                value={formData.contactNumber}
-                                onChange={handleInputChange}
-                                className="form-input"
-                                placeholder='Contact Number'
-                                required
-                            />
-                        </div>
+    <label className="form-label">Contact Number</label>
+    <input
+        type="tel"
+        name="contactNumber"
+        value={formData.contactNumber}
+        onChange={handleInputChange}
+        className={`form-input ${errors.contactNumber ? 'error' : ''}`}
+        placeholder='Contact Number'
+        required
+    />
+    {errors.contactNumber && <span className="error-message">{errors.contactNumber}</span>}
+</div>
 
                         <div className="form-field">
                             <label className="form-label">Email</label>
@@ -353,22 +376,25 @@ const Register = () => {
                                     <div {...getFrontProps()} className="dropzone form-input">
                                         <input {...getFrontInputProps()} required />
                                         {formData.photoUrls.frontFacing ? (
-                                            <img
-                                                src={formData.photoUrls.frontFacing}
-                                                alt="Front Facing Preview"
-                                                style={{ maxWidth: '100%', maxHeight: '200px' }}
-                                            />
+                                            <>
+                                                <img
+                                                    src={formData.photoUrls.frontFacing}
+                                                    alt="Front Facing Preview"
+                                                    style={{ maxWidth: '100%', maxHeight: '200px' }}
+                                                />
+                                                <p>
+                                                    Click here to reupload
+                                                </p>
+                                            </>
                                         ) : (
                                             <p>
                                                 <span className='pinktxt'>
                                                     Browse Files <br />
                                                 </span>
-                                              
+                                                Drag n drop a file here
                                             </p>
                                         )}
-                                        <p>
-                                            Drag n drop a file here
-                                        </p>
+
                                     </div>
                                 </div>
 
@@ -378,21 +404,25 @@ const Register = () => {
                                     <div {...getLeftProps()} className="dropzone form-input">
                                         <input {...getLeftInputProps()} required />
                                         {formData.photoUrls.leftProfile ? (
+                                            <>
                                             <img
                                                 src={formData.photoUrls.leftProfile}
                                                 alt="Left Profile Preview"
                                                 style={{ maxWidth: '100%', maxHeight: '200px' }}
                                             />
+                                            <p>
+                                            Click here to reupload
+                                        </p>
+                                        </>
                                         ) : (
                                             <p>
                                                 <span className='pinktxt'>
                                                     Browse Files <br />
                                                 </span>
+                                                Drag n drop a file here
                                             </p>
                                         )}
-                                        <p>
-                                            Drag n drop a file here
-                                        </p>
+                                       
                                     </div>
                                 </div>
 
@@ -402,63 +432,81 @@ const Register = () => {
                                     <div {...getRightProps()} className="dropzone form-input">
                                         <input {...getRightInputProps()} required />
                                         {formData.photoUrls.rightProfile ? (
+                                            <>
                                             <img
                                                 src={formData.photoUrls.rightProfile}
                                                 alt="Right Profile Preview"
                                                 style={{ maxWidth: '100%', maxHeight: '200px' }}
                                             />
+                                            <p>
+                                            Click here to reupload
+                                        </p>
+                                        </>
                                         ) : (
                                             <p>
                                                 <span className='pinktxt'>
                                                     Browse Files <br />
                                                 </span>
+                                                Drag n drop a file here
                                             </p>
                                         )}
-                                        <p>
-                                            Drag n drop a file here
-                                        </p>
+                                        
                                     </div>
                                 </div>
                             </div>
                         </div>
                         {showCropModal && (
-        <CropModal
-          image={currentImage}
-          crop={crop}
-          zoom={zoom}
-          onCropChange={setCrop}
-          onZoomChange={setZoom}
-          onCropComplete={onCropComplete}
-          onCancel={handleCropCancel}
-          onSave={handleSaveCroppedImage}
-          isLoading={isLoading}
-        />
-      )}
+                            <CropModal
+                                image={currentImage}
+                                crop={crop}
+                                zoom={zoom}
+                                onCropChange={setCrop}
+                                onZoomChange={setZoom}
+                                onCropComplete={onCropComplete}
+                                onCancel={handleCropCancel}
+                                onSave={handleSaveCroppedImage}
+                                isLoading={isLoading}
+                            />
+                        )}
 
-                        <div className="form-field full-width">
-                            <label className="form-label">ID Proof</label>
-                            <div {...getIdProps()} className="dropzone form-input idproof">
-                                <input {...getIdInputProps()} required />
-                                <p>
-                                    <span className='pinktxt'>
-                                        Browse Files <br />
-                                    </span>
-                                    Drag n drop a file here
-                                </p>
-                                {fileNames.idProof && <p>Selected file: {fileNames.idProof}</p>}
-                            </div>
-                        </div>
+<div className="form-field full-width">
+    <label className="form-label">ID Proof</label>
+    <div {...getIdProps()} className="dropzone form-input idproof">
+        <input {...getIdInputProps()} required />
+        {idProofPreview ? (
+            <>
+                <img
+                    src={idProofPreview}
+                    alt="ID Proof Preview"
+                    style={{ maxWidth: '100%', maxHeight: '200px' }}
+                />
+                <p>Click here to reupload</p>
+            </>
+        ) : (
+            <p>
+                <span className='pinktxt'>
+                    Browse Files <br />
+                </span>
+                Drag n drop a file here
+            </p>
+        )}
+        {fileNames.idProof && <p>Selected file: {fileNames.idProof}</p>}
+    </div>
+</div>
 
                         <div className="">
                             <label className="form-label day">Which day would be suitable to you for audition:</label>
-                            <input
-                                type="date"
+                            
+                            <select
                                 name="auditionDate"
                                 value={formData.auditionDate}
                                 onChange={handleInputChange}
-                                className="form-input"
+                                className="form-select"
                                 required
-                            />
+                            >
+                                <option value="">Pick a date</option>
+                                <option value="Mrs">8 September 2024</option>
+                            </select>
                         </div>
 
                         <div>
