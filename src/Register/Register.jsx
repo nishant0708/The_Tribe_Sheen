@@ -3,7 +3,7 @@ import { useDropzone } from 'react-dropzone';
 // import Cropper from 'react-easy-crop';
 import CropModal from './CropModal';
 import './register.css';
-
+import QR from '../assets/qr.jpg'
 const Register = () => {
     const [formData, setFormData] = useState({
         category: '',
@@ -70,30 +70,30 @@ const Register = () => {
     };
 
     const { getRootProps: getFrontProps, getInputProps: getFrontInputProps } = useDropzone({
-        accept: {'image/*': []},
+        accept: { 'image/*': [] },
         name: "Front",
         onDrop: (acceptedFiles) => onDrop(acceptedFiles, 'frontFacing'),
     });
 
     const { getRootProps: getLeftProps, getInputProps: getLeftInputProps } = useDropzone({
-        accept: {'image/*': []},
+        accept: { 'image/*': [] },
         onDrop: (acceptedFiles) => onDrop(acceptedFiles, 'leftProfile'),
     });
 
     const { getRootProps: getRightProps, getInputProps: getRightInputProps } = useDropzone({
-        accept: {'image/*': []},
+        accept: { 'image/*': [] },
         onDrop: (acceptedFiles) => onDrop(acceptedFiles, 'rightProfile'),
     });
 
     const { getRootProps: getIdProps, getInputProps: getIdInputProps } = useDropzone({
-        accept: {'image/*': []},
+        accept: { 'image/*': [] },
         onDrop: onDropIdProof,
     });
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
-    
+
         if (name === 'contactNumber') {
             if (!validatePhoneNumber(value)) {
                 setErrors(prev => ({ ...prev, contactNumber: 'Please enter a valid 10-digit phone number' }));
@@ -264,18 +264,18 @@ const Register = () => {
                         </div>
 
                         <div className="form-field">
-    <label className="form-label">Contact Number</label>
-    <input
-        type="tel"
-        name="contactNumber"
-        value={formData.contactNumber}
-        onChange={handleInputChange}
-        className={`form-input ${errors.contactNumber ? 'error' : ''}`}
-        placeholder='Contact Number'
-        required
-    />
-    {errors.contactNumber && <span className="error-message">{errors.contactNumber}</span>}
-</div>
+                            <label className="form-label">Contact Number</label>
+                            <input
+                                type="tel"
+                                name="contactNumber"
+                                value={formData.contactNumber}
+                                onChange={handleInputChange}
+                                className={`form-input ${errors.contactNumber ? 'error' : ''}`}
+                                placeholder='Contact Number'
+                                required
+                            />
+                            {errors.contactNumber && <span className="error-message">{errors.contactNumber}</span>}
+                        </div>
 
                         <div className="form-field">
                             <label className="form-label">Email</label>
@@ -405,15 +405,15 @@ const Register = () => {
                                         <input {...getLeftInputProps()} required />
                                         {formData.photoUrls.leftProfile ? (
                                             <>
-                                            <img
-                                                src={formData.photoUrls.leftProfile}
-                                                alt="Left Profile Preview"
-                                                style={{ maxWidth: '100%', maxHeight: '200px' }}
-                                            />
-                                            <p>
-                                            Click here to reupload
-                                        </p>
-                                        </>
+                                                <img
+                                                    src={formData.photoUrls.leftProfile}
+                                                    alt="Left Profile Preview"
+                                                    style={{ maxWidth: '100%', maxHeight: '200px' }}
+                                                />
+                                                <p>
+                                                    Click here to reupload
+                                                </p>
+                                            </>
                                         ) : (
                                             <p>
                                                 <span className='pinktxt'>
@@ -422,7 +422,7 @@ const Register = () => {
                                                 Drag n drop a file here
                                             </p>
                                         )}
-                                       
+
                                     </div>
                                 </div>
 
@@ -433,15 +433,15 @@ const Register = () => {
                                         <input {...getRightInputProps()} required />
                                         {formData.photoUrls.rightProfile ? (
                                             <>
-                                            <img
-                                                src={formData.photoUrls.rightProfile}
-                                                alt="Right Profile Preview"
-                                                style={{ maxWidth: '100%', maxHeight: '200px' }}
-                                            />
-                                            <p>
-                                            Click here to reupload
-                                        </p>
-                                        </>
+                                                <img
+                                                    src={formData.photoUrls.rightProfile}
+                                                    alt="Right Profile Preview"
+                                                    style={{ maxWidth: '100%', maxHeight: '200px' }}
+                                                />
+                                                <p>
+                                                    Click here to reupload
+                                                </p>
+                                            </>
                                         ) : (
                                             <p>
                                                 <span className='pinktxt'>
@@ -450,7 +450,7 @@ const Register = () => {
                                                 Drag n drop a file here
                                             </p>
                                         )}
-                                        
+
                                     </div>
                                 </div>
                             </div>
@@ -469,34 +469,34 @@ const Register = () => {
                             />
                         )}
 
-<div className="form-field full-width">
-    <label className="form-label">ID Proof</label>
-    <div {...getIdProps()} className="dropzone form-input idproof">
-        <input {...getIdInputProps()} required />
-        {idProofPreview ? (
-            <>
-                <img
-                    src={idProofPreview}
-                    alt="ID Proof Preview"
-                    style={{ maxWidth: '100%', maxHeight: '200px' }}
-                />
-                <p>Click here to reupload</p>
-            </>
-        ) : (
-            <p>
-                <span className='pinktxt'>
-                    Browse Files <br />
-                </span>
-                Drag n drop a file here
-            </p>
-        )}
-        {fileNames.idProof && <p>Selected file: {fileNames.idProof}</p>}
-    </div>
-</div>
+                        <div className="form-field full-width">
+                            <label className="form-label">ID Proof</label>
+                            <div {...getIdProps()} className="dropzone form-input idproof">
+                                <input {...getIdInputProps()} required />
+                                {idProofPreview ? (
+                                    <>
+                                        <img
+                                            src={idProofPreview}
+                                            alt="ID Proof Preview"
+                                            style={{ maxWidth: '100%', maxHeight: '200px' }}
+                                        />
+                                        <p>Click here to reupload</p>
+                                    </>
+                                ) : (
+                                    <p>
+                                        <span className='pinktxt'>
+                                            Browse Files <br />
+                                        </span>
+                                        Drag n drop a file here
+                                    </p>
+                                )}
+                                {fileNames.idProof && <p>Selected file: {fileNames.idProof}</p>}
+                            </div>
+                        </div>
 
                         <div className="">
                             <label className="form-label day">Which day would be suitable to you for audition:</label>
-                            
+
                             <select
                                 name="auditionDate"
                                 value={formData.auditionDate}
@@ -524,9 +524,16 @@ const Register = () => {
                                 ))}
                             </div>
                         </div>
-                        <div className="form-field">
-                            <p className="form-label day">Registration Fee: <span className='black'>Rs. 200/-</span></p>
+                        <div className="form-field full-width">
+                            <p className="form-label day">Registration Fee: <span className='black'>Rs. 1000/-</span></p>
                         </div>
+                        <div className="qr-code-section">
+    <p className="qr-code-title pinktxt">Scan this QR to pay</p>
+    <div className="qr-code-container">
+        <img src={QR} alt="QR Code for payment" className="qr-code-image" />
+    </div>
+</div>
+
                     </div>
                     <button type="submit" className="submit-button">
                         Submit

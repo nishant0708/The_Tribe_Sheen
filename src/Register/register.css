@@ -268,6 +268,23 @@
 .pinktxt {
   color: #bc1522;
 }
+.qr-code-section {
+  width: 100%;
+}
+
+.qr-code-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.qr-code-image {
+  max-width: 100%;
+  height: auto;
+  max-height: 30vw; /* Adjust this value as needed */
+}
+
+
 @media (max-width: 1025px) {
   .drop-container{
     width: 100%;
@@ -289,9 +306,10 @@
   .registerContainer{
     padding: 4rem 3rem;
   }
+ 
 
 }
-@media (max-width: 789px) {
+@media (max-width: 768px) {
   .registerContainer{
     padding: 1.5rem;
   }
@@ -316,6 +334,11 @@
   .vogue-star-form{
     padding: 1rem;
   }
+  .qr-code-title {
+    font-size: 1rem;
 }
-@media (max-width: 500px) {
+
+.qr-code-image {
+    max-height: 80vw; /* Adjust this value for smaller screens */
+}
 }
