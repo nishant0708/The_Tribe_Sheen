@@ -80,6 +80,7 @@
   border: 2px solid white;
 }
 .contact_main {
+  max-width: 1300px;
   width: 100%;
   background-color: #ff9bbd;
   display: flex;
@@ -109,7 +110,7 @@
   font-weight: 800;
 }
 .icons {
-  margin-right: 100px;
+  margin-right: 10px;
 }
 .icons {
   display: flex;
