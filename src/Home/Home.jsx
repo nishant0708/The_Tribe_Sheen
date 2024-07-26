@@ -3,6 +3,8 @@ import Navbar from '../Navbar/navbar';
 import About from '../About/About';
 import './Home.css';
 import Contact from '../Contact/Contact';
+import Perks from '../Perks/perks';
+import Updates from '../Updates/updates'
 
 
 const Home = () => {
@@ -11,7 +13,8 @@ const Home = () => {
       <Navbar />
       <About />
       <Contact />
-      
+      <Perks/>
+      <Updates/>
     </div>
   );
 };
