@@ -1,5 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { useDropzone } from 'react-dropzone';
+// import Cropper from 'react-easy-crop';
+import CropModal from './CropModal';
 import './register.css';
 
 const Register = () => {
@@ -37,25 +39,20 @@ const Register = () => {
         rightProfile: '',
         idProof: '',
     });
+    const [crop, setCrop] = useState({ x: 0, y: 0 });
+    const [zoom, setZoom] = useState(1);
+    const [croppedAreaPixels, setCroppedAreaPixels] = useState(null);
+    const [currentImage, setCurrentImage] = useState(null);
+    const [currentImageType, setCurrentImageType] = useState(null);
+    const [isLoading, setIsLoading] = useState(false);
+    const [showCropModal, setShowCropModal] = useState(false);
 
-    const onDrop = (acceptedFiles, photoType) => {
-        const file = acceptedFiles[0];
-        setFormData((prevState) => ({
-            ...prevState,
-            photos: {
-                ...prevState.photos,
-                [photoType]: file,
-            },
-            photoUrls: {
-                ...prevState.photoUrls,
-                [photoType]: URL.createObjectURL(file),
-            },
-        }));
-        setFileNames((prevState) => ({
-            ...prevState,
-            [photoType]: file.name,
-        }));
-    };
+    const onDrop = useCallback((acceptedFiles, photoType) => {
+    const file = acceptedFiles[0];
+    setCurrentImage(URL.createObjectURL(file));
+    setCurrentImageType(photoType);
+    setShowCropModal(true);
+  }, []);
 
     const onDropIdProof = (acceptedFiles) => {
         setFormData((prevState) => ({
@@ -101,15 +98,88 @@ const Register = () => {
         e.preventDefault();
         console.log(formData);
     };
+    const handleCropCancel = () => {
+        setShowCropModal(false);
+        setCurrentImage(null);
+        setCurrentImageType(null);
+      };
 
+    const onCropComplete = useCallback((croppedArea, croppedAreaPixels) => {
+        setCroppedAreaPixels(croppedAreaPixels);
+    }, []);
+
+    const createImage = (url) =>
+        new Promise((resolve, reject) => {
+            const image = new Image();
+            image.addEventListener('load', () => resolve(image));
+            image.addEventListener('error', (error) => reject(error));
+            image.src = url;
+        });
+
+    const getCroppedImg = async (imageSrc, pixelCrop) => {
+        const image = await createImage(imageSrc);
+        const canvas = document.createElement('canvas');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = pixelCrop.width;
+        canvas.height = pixelCrop.height;
+
+        ctx.drawImage(
+            image,
+            pixelCrop.x,
+            pixelCrop.y,
+            pixelCrop.width,
+            pixelCrop.height,
+            0,
+            0,
+            pixelCrop.width,
+            pixelCrop.height
+        );
+
+        return new Promise((resolve) => {
+            canvas.toBlob((blob) => {
+                resolve(blob);
+            }, 'image/jpeg');
+        });
+    };
+
+    const handleSaveCroppedImage = async () => {
+    if (currentImage && croppedAreaPixels) {
+      setIsLoading(true);
+      try {
+        const croppedImageBlob = await getCroppedImg(currentImage, croppedAreaPixels);
+        const croppedImageUrl = URL.createObjectURL(croppedImageBlob);
+
+        setFormData(prevState => ({
+          ...prevState,
+          photos: {
+            ...prevState.photos,
+            [currentImageType]: croppedImageBlob,
+          },
+          photoUrls: {
+            ...prevState.photoUrls,
+            [currentImageType]: croppedImageUrl,
+          },
+        }));
+
+        setShowCropModal(false);
+        setCurrentImage(null);
+        setCurrentImageType(null);
+      } catch (e) {
+        console.error('Error cropping image:', e);
+      } finally {
+        setIsLoading(false);
+      }
+    }
+  };
     useEffect(() => {
         return () => {
-            // Cleanup function to revoke object URLs
             Object.values(formData.photoUrls).forEach(url => {
                 if (url) URL.revokeObjectURL(url);
             });
+            if (currentImage) URL.revokeObjectURL(currentImage);
         };
-    }, [formData.photoUrls]);
+    }, [formData.photoUrls, currentImage]);
 
     return (
         <div className="registerContainer">
@@ -293,6 +363,7 @@ const Register = () => {
                                                 <span className='pinktxt'>
                                                     Browse Files <br />
                                                 </span>
+                                              
                                             </p>
                                         )}
                                         <p>
@@ -350,7 +421,19 @@ const Register = () => {
                                 </div>
                             </div>
                         </div>
-
+                        {showCropModal && (
+        <CropModal
+          image={currentImage}
+          crop={crop}
+          zoom={zoom}
+          onCropChange={setCrop}
+          onZoomChange={setZoom}
+          onCropComplete={onCropComplete}
+          onCancel={handleCropCancel}
+          onSave={handleSaveCroppedImage}
+          isLoading={isLoading}
+        />
+      )}
 
                         <div className="form-field full-width">
                             <label className="form-label">ID Proof</label>

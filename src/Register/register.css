@@ -90,8 +90,21 @@
   cursor: pointer;
   background-color: white;
 }
+.crop-container {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
 
-.crop-modal {
+.crop-container button:hover {
+  background-color: #45a049;
+}
+
+.crop-container button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+/* .crop-modal {
   position: fixed;
   inset: 0;
   background-color: rgba(0, 0, 0, 0.5);
@@ -117,8 +130,63 @@
   border-radius: 0.25rem;
   border: none;
   cursor: pointer;
+} */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
 }
 
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 500px;
+}
+
+.crop-container {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  background: #333;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.modal-actions button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modal-actions button:first-child {
+  background-color: #f44336;
+  color: white;
+}
+
+.modal-actions button:last-child {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.modal-actions button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
 .size-selector {
   display: flex;
   gap: 1rem;
