@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDropzone } from 'react-dropzone';
 import './register.css';
 
@@ -20,6 +20,11 @@ const Register = () => {
             leftProfile: null,
             rightProfile: null,
         },
+        photoUrls: {
+            frontFacing: null,
+            leftProfile: null,
+            rightProfile: null,
+        },
         idProof: null,
         description: '',
         confidentSize: '',
@@ -34,16 +39,21 @@ const Register = () => {
     });
 
     const onDrop = (acceptedFiles, photoType) => {
+        const file = acceptedFiles[0];
         setFormData((prevState) => ({
             ...prevState,
             photos: {
                 ...prevState.photos,
-                [photoType]: acceptedFiles[0],
+                [photoType]: file,
+            },
+            photoUrls: {
+                ...prevState.photoUrls,
+                [photoType]: URL.createObjectURL(file),
             },
         }));
         setFileNames((prevState) => ({
             ...prevState,
-            [photoType]: acceptedFiles[0].name,
+            [photoType]: file.name,
         }));
     };
 
@@ -91,6 +101,15 @@ const Register = () => {
         e.preventDefault();
         console.log(formData);
     };
+
+    useEffect(() => {
+        return () => {
+            // Cleanup function to revoke object URLs
+            Object.values(formData.photoUrls).forEach(url => {
+                if (url) URL.revokeObjectURL(url);
+            });
+        };
+    }, [formData.photoUrls]);
 
     return (
         <div className="registerContainer">
@@ -258,45 +277,75 @@ const Register = () => {
                         <div className='photos full-width'>
                             <label className="photo-title">Upload Your Photos </label>
                             <div className='drop-container'>
+                                {/* Front Facing */}
                                 <div className="form-field">
                                     <label className="form-label">Front Facing</label>
                                     <div {...getFrontProps()} className="dropzone form-input">
                                         <input {...getFrontInputProps()} required />
+                                        {formData.photoUrls.frontFacing ? (
+                                            <img
+                                                src={formData.photoUrls.frontFacing}
+                                                alt="Front Facing Preview"
+                                                style={{ maxWidth: '100%', maxHeight: '200px' }}
+                                            />
+                                        ) : (
+                                            <p>
+                                                <span className='pinktxt'>
+                                                    Browse Files <br />
+                                                </span>
+                                            </p>
+                                        )}
                                         <p>
-                                    <span className='pinktxt'>
-                                        Browse Files <br />
-                                    </span>
-                                    Drag n drop a file here
-                                </p>
-                                        {fileNames.frontFacing && <p>Selected file: {fileNames.frontFacing}</p>}
+                                            Drag n drop a file here
+                                        </p>
                                     </div>
                                 </div>
 
+                                {/* Left Profile */}
                                 <div className="form-field">
                                     <label className="form-label">Left Profile</label>
                                     <div {...getLeftProps()} className="dropzone form-input">
                                         <input {...getLeftInputProps()} required />
+                                        {formData.photoUrls.leftProfile ? (
+                                            <img
+                                                src={formData.photoUrls.leftProfile}
+                                                alt="Left Profile Preview"
+                                                style={{ maxWidth: '100%', maxHeight: '200px' }}
+                                            />
+                                        ) : (
+                                            <p>
+                                                <span className='pinktxt'>
+                                                    Browse Files <br />
+                                                </span>
+                                            </p>
+                                        )}
                                         <p>
-                                    <span className='pinktxt'>
-                                        Browse Files <br />
-                                    </span>
-                                    Drag n drop a file here
-                                </p>
-                                        {fileNames.leftProfile && <p>Selected file: {fileNames.leftProfile}</p>}
+                                            Drag n drop a file here
+                                        </p>
                                     </div>
                                 </div>
 
+                                {/* Right Profile */}
                                 <div className="form-field">
                                     <label className="form-label">Right Profile</label>
                                     <div {...getRightProps()} className="dropzone form-input">
                                         <input {...getRightInputProps()} required />
+                                        {formData.photoUrls.rightProfile ? (
+                                            <img
+                                                src={formData.photoUrls.rightProfile}
+                                                alt="Right Profile Preview"
+                                                style={{ maxWidth: '100%', maxHeight: '200px' }}
+                                            />
+                                        ) : (
+                                            <p>
+                                                <span className='pinktxt'>
+                                                    Browse Files <br />
+                                                </span>
+                                            </p>
+                                        )}
                                         <p>
-                                    <span className='pinktxt'>
-                                        Browse Files <br />
-                                    </span>
-                                    Drag n drop a file here
-                                </p>
-                                        {fileNames.rightProfile && <p>Selected file: {fileNames.rightProfile}</p>}
+                                            Drag n drop a file here
+                                        </p>
                                     </div>
                                 </div>
                             </div>
