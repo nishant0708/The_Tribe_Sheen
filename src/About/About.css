@@ -13,7 +13,7 @@
 
   background-size: cover;
   background-repeat: no-repeat;
-  /* position: relative; */
+  position: relative;
 }
 .about_main {
   position: absolute;
@@ -67,7 +67,7 @@
   }
   .About_us p {
     margin-top: 20px;
-    font-size: 12px;
+    font-size: 14px;
     padding: 0px;
   }
 }
