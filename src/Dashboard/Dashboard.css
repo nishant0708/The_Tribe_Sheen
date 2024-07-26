@@ -54,10 +54,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 0;
     img{
         width: 100%;
         
     }
+
 
     @media (max-width: 868px) { /* Increased padding for better spacing on smaller screens */
         height: 20vh;
@@ -97,19 +99,7 @@
             text-align: center; /* Ensure text is centered */
         }
     }
-    @media (max-width: 488px) { /* Increased padding for better spacing on smaller screens */
-        height: fit-content;
-        width: 80vw;
-        margin-bottom: 3vh;
-
-
-        p {
-            font-size: 3.45vw;
-            color: white;
-            width: 100%;
-            text-align: center; /* Ensure text is centered */
-        }
-    }
+    
 }
 
 .register__button {
@@ -167,7 +157,9 @@
     position: relative;
     width: 100%;
     height: 30vh;
-    background-color: #FF9BBD;
+    background-image: url(../assets/1.png); 
+    background-position: bottom;
+    background-size: cover;
     display: flex;
     justify-content: center;
     overflow: visible;

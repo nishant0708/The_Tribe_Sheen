@@ -1,126 +1,63 @@
-import React  from 'react';
-import './Team.css'; 
-import Carousel from '../Carousel/Carousel';
+import React from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import './Team.css'; // Make sure the path is correct
+import image from '../assets/vinita.png';
 
+function Team() {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+  };
 
-export const Team = () => {
-
-      
-    // const slides = [
-    //     { url: {image}, title: "beach" },
-    //     { url: {image}, title: "boat" },
-    //     { url: {image}, title: "forest" },
-    //     { url: {image}, title: "city" },
-    //     { url: {image}, title: "italy" },
-    //   ];
-    //   const containerStyles = {
-    //     width: "500px",
-    //     height: "280px",
-    //     margin: "0 auto",
-    //   };
-
-    // const slideStyles = {
-    //     width: "100%",
-    //     height: "100%",
-    //     borderRadius: "10px",
-    //     backgroundSize: "cover",
-    //     backgroundPosition: "center",
-    //   };
-      
-    //   const rightArrowStyles = {
-    //     position: "absolute",
-    //     top: "50%",
-    //     transform: "translate(0, -50%)",
-    //     right: "32px",
-    //     fontSize: "45px",
-    //     color: "#fff",
-    //     zIndex: 1,
-    //     cursor: "pointer",
-    //   };
-      
-    //   const leftArrowStyles = {
-    //     position: "absolute",
-    //     top: "50%",
-    //     transform: "translate(0, -50%)",
-    //     left: "32px",
-    //     fontSize: "45px",
-    //     color: "#fff",
-    //     zIndex: 1,
-    //     cursor: "pointer",
-    //   };
-      
-    //   const sliderStyles = {
-    //     position: "relative",
-    //     height: "100%",
-    //   };
-      
-    //   const dotsContainerStyles = {
-    //     display: "flex",
-    //     justifyContent: "center",
-    //   };
-      
-    //   const dotStyle = {
-    //     margin: "0 3px",
-    //     cursor: "pointer",
-    //     fontSize: "20px",
-    //   };
-      
-      
-    //     const [currentIndex, setCurrentIndex] = useState(0);
-    //     const goToPrevious = () => {
-    //       const isFirstSlide = currentIndex === 0;
-    //       const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
-    //       setCurrentIndex(newIndex);
-    //     };
-    
-    //     const goToNext = () => {
-    //       const isLastSlide = currentIndex === slides.length - 1;
-    //       const newIndex = isLastSlide ? 0 : currentIndex + 1;
-    //       setCurrentIndex(newIndex);
-    //     };
-
-    //     const goToSlide = (slideIndex) => {
-    //       setCurrentIndex(slideIndex);
-    //     };
-
-    //     const slideStylesWidthBackground = {
-    //       ...slideStyles,
-    //       backgroundImage: `url(${slides[currentIndex].url})`,
-    //     };
-
+  const slides = [
+    {
+      name: "Dr.Vinita Raj",
+      position: "Co-Founder",
+      description: "Dr. Vinita Raj, a dynamic entrepreneur and the visionary behind *Word Dealers Pvt. Ltd., is a force to be reckoned with. She has started her career with IIM Indore and Narsee Monjee, Mumbai. Beyond her business acumen, Dr. Raj harbors a deep passion for fashion, a passion that culminated in her crowning as Mrs. Chennai 2023. She is also a Fashion Brand Ambassador of Research Foundation of India in 158 Countries. Multifaceted career as an entrepreneur, orator, and advocate is marked by a steadfast commitment to women&apos;s empowerment. Implementing a pioneering work-from-home policy exclusively for women at Word Dealers, Dr. Raj has carved a niche for herself as a champion of gender equality. This innovative approach has garnered international acclaim, with invitations to speak at the US Consulate and recognition as one of SheInspires, England Top 6 Change Making Women Entrepreneurs globally. Her exceptional leadership was further validated by the prestigious Economic Times Women Entrepreneur of the Year 2022 award.",
+      image: image,
+    },
+    {
+      name: "Dr.Vinita Raj",
+      position: "Co-Founder",
+      description: "Dr. Vinita Raj, a dynamic entrepreneur and the visionary behind *Word Dealers Pvt. Ltd., is a force to be reckoned with. She has started her career with IIM Indore and Narsee Monjee, Mumbai. Beyond her business acumen, Dr. Raj harbors a deep passion for fashion, a passion that culminated in her crowning as Mrs. Chennai 2023. She is also a Fashion Brand Ambassador of Research Foundation of India in 158 Countries. Multifaceted career as an entrepreneur, orator, and advocate is marked by a steadfast commitment to women&apos;s empowerment. Implementing a pioneering work-from-home policy exclusively for women at Word Dealers, Dr. Raj has carved a niche for herself as a champion of gender equality. This innovative approach has garnered international acclaim, with invitations to speak at the US Consulate and recognition as one of SheInspires, England Top 6 Change Making Women Entrepreneurs globally. Her exceptional leadership was further validated by the prestigious Economic Times Women Entrepreneur of the Year 2022 award.",
+      image: image,
+    },
+    {
+      name: "Dr.Vinita Raj",
+      position: "Co-Founder",
+      description: "Dr. Vinita Raj, a dynamic entrepreneur and the visionary behind *Word Dealers Pvt. Ltd., is a force to be reckoned with. She has started her career with IIM Indore and Narsee Monjee, Mumbai. Beyond her business acumen, Dr. Raj harbors a deep passion for fashion, a passion that culminated in her crowning as Mrs. Chennai 2023. She is also a Fashion Brand Ambassador of Research Foundation of India in 158 Countries. Multifaceted career as an entrepreneur, orator, and advocate is marked by a steadfast commitment to women&apos;s empowerment. Implementing a pioneering work-from-home policy exclusively for women at Word Dealers, Dr. Raj has carved a niche for herself as a champion of gender equality. This innovative approach has garnered international acclaim, with invitations to speak at the US Consulate and recognition as one of SheInspires, England Top 6 Change Making Women Entrepreneurs globally. Her exceptional leadership was further validated by the prestigious Economic Times Women Entrepreneur of the Year 2022 award.",
+      image: image,
+    }]  
 
   return (
-    <div className="Main">
-      <div className="content">
-        <h1>Our Team</h1>
-        {/* <div className="carousel-container">
-        <div style={containerStyles}>
-        <div style={sliderStyles}>
-      <div>
-        <div onClick={goToPrevious} style={leftArrowStyles}>
-          ❰
-        </div>
-        <div onClick={goToNext} style={rightArrowStyles}>
-          ❱
-        </div>
-      </div>
-      <div style={slideStylesWidthBackground}></div>
-      <div style={dotsContainerStyles}>
-        {slides.map((slide, slideIndex) => (
-          <div className='mainSlide'
-            style={dotStyle}
-            key={slideIndex}
-            onClick={() => goToSlide(slideIndex)}
-          >
-            ●
+    <div className="slider-container">
+      <h1 className="heading">Our Team</h1>
+      <Slider {...settings}>
+        {slides.map((slide, index) => (
+          <div className="slide" key={index}>
+            <div className="slide_card">
+              <div className="text_content">
+                <div className="headers">
+                  <h1>{slide.name}</h1><h1>|</h1>
+                  <h3>{slide.position}</h3>
+                </div>
+                <p>{slide.description}</p>
+              </div>
+              <div className="image">
+                <img src={slide.image} alt="team-member" />
+              </div>
+            </div>
           </div>
         ))}
-      </div>
-    </div>
-        </div>
-        </div> */}
-        <Carousel  />
-      </div>
+      </Slider>
     </div>
   );
-};
+}
+
+export default Team;
