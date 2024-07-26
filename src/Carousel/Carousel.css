@@ -1,0 +1,119 @@
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    margin-top: -10vh;
+    overflow: visible;
+
+  }
+  
+  .carousel-slide-wrapper {
+    display: flex;
+    width: 80%;
+    height: 45vh;
+    transition: transform 0.5s ease-in-out;
+    align-items: center;
+    justify-content: start;
+    overflow: visible;
+
+    @media (max-width: 1024px) {
+        height: 55vh;
+        
+    }
+  }
+
+  .titleandposition {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+    width: 85%;
+
+    height: 30%;
+    transition: transform 0.5s;
+
+
+    @media (max-width: 1024px) {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 0;  
+    }
+  } 
+  
+  .carousel-slide {
+    min-width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: start;
+    height: 100%;
+    overflow: visible;
+  }
+  
+  .carousel-slide img {
+    position: absolute;
+    height: 100%;
+    right: 8%;
+  }
+
+  .full_stop {
+    width: 2px;
+    height: 50%;
+    background-color: black;
+  }
+  
+  .carousel-caption {
+    width: 75%;
+    color: black;
+    background-color: #7ED1DF;
+    padding: 10px;
+    border-radius: 25px;
+  }
+  
+  .carousel-title {
+    font-size: 3em;
+    margin: 10px;
+  }
+  
+  .carousel-description {
+    margin:  0 10px;
+    width: 65%;
+  }
+  
+  .carousel-position {
+    font-size: 3em;
+    font-weight: 100;
+  }
+  
+  .carousel-controls, .carousel-indicators {
+    position: absolute;
+    bottom: 12%;
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    transform: translateY(-50%);
+  }
+  .carousel-controls {
+    bottom: 5%;
+    gap: 10vw;
+  }
+  
+ 
+  
+  .carousel-indicator {
+    width: 20px;
+    height: 20px;
+    background-color: rgba(150, 215, 255, 0.454);
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  
+  .carousel-indicator.active {
+    
+    background-color: #ffffff;
+  }
+  

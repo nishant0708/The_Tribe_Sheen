@@ -3,7 +3,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: fit-content;
     width: 100%;
     background-image: url(../assets/1.png); 
     background-size: cover;
@@ -14,7 +13,6 @@
 .mainpage__content {
     width: 100%;
     max-width: 1300px;
-    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -22,45 +20,101 @@
 }
 
 .mainpage__topbar {
-    margin-top: 2vw;
+    margin-top: 2vh;
     display: flex;
-    justify-content: center;
+    flex-direction: row;
     width: 100%;
-    gap: 7vw;
-    height: fit-content;
     align-items: center;
-    overflow-y: visible;
+    justify-content: center;
+    gap: 4vh; /* Adjust gap as needed */
     background: none;
-    z-index: 0;
+    z-index: 0; /* Added padding to ensure spacing on smaller screens */
+}
+
+/* For screens smaller than 768px (tablets and below) */
+@media (max-width: 868px) {
+}
+
+/* For screens smaller than 480px (phones) */
+@media (max-width: 480px) {
+    .mainpage__topbar {
+        flex-direction: column;
+        gap: 0vh; /* Adjust gap as needed */
+        padding: 0 5vw; /* Further increased padding for smaller screens */
+        margin-top: 5vh;
+    }
 }
 
 .mainpage__topbar__logo {
-    height: 25vh;
-    width: 35vw;
-    background-image: url(../assets/Untitled\ design\ \(1\).png);
+    height: 20vh;
+    width: 25vw;
     background-size: contain; 
     background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img{
+        width: 100%;
+        
+    }
+
+    @media (max-width: 868px) { /* Increased padding for better spacing on smaller screens */
+        height: 20vh;
+        width: 50vw;
+    }
+    @media (max-width: 480px) { /* Increased padding for better spacing on smaller screens */
+        margin-top: 5vh;
+        height: 20vh;
+        width: 65vw;
+    }
 }
 
 .mainpage__topbar__subheader {
-    width: 40vw;
+    width: 45vw;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 
-    
     p {
-        font-size: 1.45vw;
+        font-size: 1.35vw;
         color: white;
         width: 100%;
+        text-align: center; /* Ensure text is centered */
+    }
+
+    @media (max-width: 868px) { /* Increased padding for better spacing on smaller screens */
+        height: fit-content;
+        width: 80vw;    
+        margin-bottom: 5vh;
+
+
+        p {
+            font-size: 2.45vw;
+            color: white;
+            width: 100%;
+            text-align: center; /* Ensure text is centered */
+        }
+    }
+    @media (max-width: 488px) { /* Increased padding for better spacing on smaller screens */
+        height: fit-content;
+        width: 80vw;
+        margin-bottom: 3vh;
+
+
+        p {
+            font-size: 3.45vw;
+            color: white;
+            width: 100%;
+            text-align: center; /* Ensure text is centered */
+        }
     }
 }
 
-
 .register__button {
-    width: 15vw;
-    height: 8vh;
+    width: fit-content;
+    height: fit-content;
     background-color: #BC1522;
     border: none;
     border-radius: 10px;
@@ -70,13 +124,23 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 0.1vh 5.5vw;
 
     p {
-        font-size: 1.vw;
+        font-size: 2vh;
         color: white;
     }
-}
 
+    @media (max-width: 868px) { /* Increased padding for better spacing on smaller screens */
+        height: fit-content;
+
+    }
+
+    @media (max-width: 488px) { /* Increased padding for better spacing on smaller screens */
+        height: fit-content;
+        padding: 0.01vh 7.5vw;
+    }
+}
 
 .mainpage__coverpic {
     width: 100%;
@@ -85,31 +149,32 @@
     background-repeat: no-repeat;
     background-position: top;
     overflow-y: visible;
-    
 }
+
 .mainpage__pinkspacer::before {
     content: "";
     position: absolute;
-    top: 0;
+    bottom: 0;
     left: 0;
-    
     width: 100%;
     height: 30vh;
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.288), rgba(255, 255, 255, 0.753), rgba(255, 255, 255, 1));
     z-index: 1;
+
 }
 
 .mainpage__pinkspacer {
     position: relative;
     width: 100%;
     height: 30vh;
-    background-color: #F2E9E4;
+    background-color: #FF9BBD;
     display: flex;
     justify-content: center;
-
+    overflow: visible;
+    
     img {
         position: absolute;
-        bottom: 0;
+        bottom: 20px;
         left: 50%;
         transform: translateX(-50%);
         width: 83%;
@@ -117,6 +182,45 @@
         max-height: 105vh; /* Adjusted to not overlap the first 25vh of the upper div */
         object-fit: cover;
     }
+    
+    @media (max-width: 480px) {
+        img {
+            width: 100%;
+        }
+    }
+    
+    
+    @media (max-width: 768px) {
+        height: 20vh;
+    }
+    
 }
 
+
+@media (max-width: 768px) {
+    .mainpage__pinkspacer::before {
+        height: 20vh;
+    }
+
+    
+}
+
+@media (max-width: 868px) {
+    .mainpage__topbar {
+        flex-direction: column;
+        gap: 2vh; /* Adjust gap as needed for better spacing on smaller screens */
+    padding: 0 4vw; /* Increased padding for better spacing on smaller screens */
+    margin-top: 4vh;        
+    
+}
+}
+@media (max-width: 488px) {
+    .mainpage__pinkspacer::before {
+        height: 10vh;
+    }
+
+    .mainpage__pinkspacer {
+        height: 10vh;
+    }
+}
 
