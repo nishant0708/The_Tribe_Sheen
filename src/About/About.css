@@ -13,7 +13,7 @@
 
   background-size: cover;
   background-repeat: no-repeat;
-  /* position: relative; */
+  position: relative;
 }
 .about_main {
   position: absolute;

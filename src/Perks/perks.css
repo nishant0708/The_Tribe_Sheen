@@ -1,0 +1,51 @@
+.carousel {
+    padding: 10px;
+    background-color: #ff9bbd;
+  }
+  
+  .container {
+    display: grid;
+    font-size: 1rem;
+    width: 90%; /* Adjust the width to prevent overlapping */
+    height: auto;
+    color: black;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 0 10px; /* Add margin to create space between slides */
+  }
+  
+  .img_container {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+  h1 {
+    color: white;
+    font-size: 58px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  h3 {
+    align-items: center;
+    margin: 10px 0;
+    font-size: 1.2rem;
+  }
+  
+  p {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+  
+  .slick-slide {
+    padding: 0 10px; /* Add padding to the slides */
+  }
+  
+  .slick-list {
+    margin: 0 -10px; /* Adjust the margin to counter the padding */
+  }
+  
