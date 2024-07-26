@@ -1,15 +1,15 @@
 import React from 'react'
-// import About from '../About/About'
+import About from '../About/About'
 import './Home.css'
-// import Contact from '../Contact/Contact'
-import Register from '../Register/Register'
+import Contact from '../Contact/Contact'
+import { Link } from 'react-router-dom'
 
 const Home = () => {
   return (
     <div className="home">
-      {/* <About />
-      <Contact /> */}
-      <Register/>
+      <Link to="/register" className="register-link">Register</Link>
+      <About />
+      <Contact />
     </div>
   )
 }

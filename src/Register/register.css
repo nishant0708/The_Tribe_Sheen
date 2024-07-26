@@ -174,12 +174,12 @@
 }
 
 .modal-actions button:first-child {
-  background-color: #f44336;
+  background-color: pink;
   color: white;
 }
 
 .modal-actions button:last-child {
-  background-color: #4CAF50;
+  background-color: #bc1522;
   color: white;
 }
 
