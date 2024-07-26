@@ -1,6 +1,23 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './About.css'
+
 const About = () => {
+  const updateMargin = () => {
+    const aboutMain = document.querySelector('.about_main')
+    const aboutUs = document.querySelector('.About_us')
+    const aboutMainHeight = aboutMain.offsetHeight
+    aboutUs.style.marginBottom = aboutMainHeight + 'px'
+  }
+
+  useEffect(() => {
+    updateMargin()
+    window.addEventListener('resize', updateMargin)
+
+    return () => {
+      window.removeEventListener('resize', updateMargin)
+    }
+  }, [])
+
   return (
     <div className="About_us">
       <div className="about_main">
