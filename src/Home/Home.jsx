@@ -1,7 +1,10 @@
 import React from 'react'
+import { Dashboard } from '../Dashboard/Dashboard'
 
 const Home = () => {
-  return <div>Home</div>
+  return <div >
+             <Dashboard  />
+  </div>
 }
 
 export default Home

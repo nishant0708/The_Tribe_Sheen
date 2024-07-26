@@ -1,0 +1,122 @@
+.mainpage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    width: 100%;
+    background-image: url(../assets/1.png); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 2vh;
+}
+
+.mainpage__content {
+    width: 100%;
+    max-width: 1300px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainpage__topbar {
+    margin-top: 2vw;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 7vw;
+    height: fit-content;
+    align-items: center;
+    overflow-y: visible;
+    background: none;
+    z-index: 0;
+}
+
+.mainpage__topbar__logo {
+    height: 25vh;
+    width: 35vw;
+    background-image: url(../assets/Untitled\ design\ \(1\).png);
+    background-size: contain; 
+    background-repeat: no-repeat;
+}
+
+.mainpage__topbar__subheader {
+    width: 40vw;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    
+    p {
+        font-size: 1.45vw;
+        color: white;
+        width: 100%;
+    }
+}
+
+
+.register__button {
+    width: 15vw;
+    height: 8vh;
+    background-color: #BC1522;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    color: black;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    p {
+        font-size: 1.vw;
+        color: white;
+    }
+}
+
+
+.mainpage__coverpic {
+    width: 100%;
+    height: 120vh;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: top;
+    overflow-y: visible;
+    
+}
+.mainpage__pinkspacer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+    width: 100%;
+    height: 30vh;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+    z-index: 1;
+}
+
+.mainpage__pinkspacer {
+    position: relative;
+    width: 100%;
+    height: 30vh;
+    background-color: #F2E9E4;
+    display: flex;
+    justify-content: center;
+
+    img {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 83%;
+        height: auto;
+        max-height: 105vh; /* Adjusted to not overlap the first 25vh of the upper div */
+        object-fit: cover;
+    }
+}
+
+
