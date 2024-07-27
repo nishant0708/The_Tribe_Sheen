@@ -14,6 +14,9 @@
     "react-easy-crop": "^5.0.7",
     "react-icons": "^5.2.1",
     "react-scripts": "5.0.1",
+    "react-slick": "^0.30.2",
+    "slick-carousel": "^1.8.1",
+    "swiper": "^11.1.8",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
