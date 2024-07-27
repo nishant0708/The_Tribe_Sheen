@@ -1,42 +1,42 @@
-import React, { useEffect } from 'react';
-import Logo from '../assets/sheenlogo.png';
-import './loader.css';
+import React, { useEffect } from 'react'
+import Logo from '../assets/sheenlogo.png'
+import './loader.css'
 
 export default function Loader() {
-    useEffect(() => {
-        // Function to add 'loaded' class to body when DOM content is loaded
-        const handleDOMContentLoaded = () => {
-          document.querySelector("body").classList.add("loaded");
-        };
-    
-        // Check if DOMContentLoaded event has already occurred
-        if (document.readyState === "complete") {
-          handleDOMContentLoaded();
-        } else {
-          // Add event listener for DOMContentLoaded
-          document.addEventListener("DOMContentLoaded", handleDOMContentLoaded);
-        }
-    
-        // Set a timeout to add 'loaded' class after 1500ms as a fallback
-        const timeoutId = setTimeout(() => {
-          document.querySelector("body").classList.add("loaded");
-        }, 1500);
-    
-        // Clean up: remove event listener and clear timeout
-        return () => {
-          document.removeEventListener("DOMContentLoaded", handleDOMContentLoaded);
-          clearTimeout(timeoutId);
-        };
-      }, []);
-    
+  useEffect(() => {
+    // Function to add 'loaded' class to body when DOM content is loaded
+    const handleDOMContentLoaded = () => {
+      document.querySelector('body').classList.add('loaded')
+    }
+
+    // Check if DOMContentLoaded event has already occurred
+    if (document.readyState === 'complete') {
+      handleDOMContentLoaded()
+    } else {
+      // Add event listener for DOMContentLoaded
+      document.addEventListener('DOMContentLoaded', handleDOMContentLoaded)
+    }
+
+    // Set a timeout to add 'loaded' class after 1500ms as a fallback
+    const timeoutId = setTimeout(() => {
+      document.querySelector('body').classList.add('loaded')
+    }, 3000)
+
+    // Clean up: remove event listener and clear timeout
+    return () => {
+      document.removeEventListener('DOMContentLoaded', handleDOMContentLoaded)
+      clearTimeout(timeoutId)
+    }
+  }, [])
+
   return (
     <div id="loader-wrapper">
       {/* SVG loader animation */}
       <div className="loaderbox">
-      <img src={Logo} alt='Sheen Logo' className='loader-logo' />
+        <img src={Logo} alt="Sheen Logo" className="loader-logo" />
 
-        <svg className="loader" width="240" height="240" viewBox="0 0 240 240">
-          {/* Large outer circle */}
+        {/* <svg className="loader" width="240" height="240" viewBox="0 0 240 240">
+
           <circle
             className="loader-ring loader-ring-a"
             cx="120"
@@ -49,7 +49,7 @@ export default function Loader() {
             strokeDashoffset="-330"
             strokeLinecap="round"
           ></circle>
-          {/* Middle circle */}
+      
           <circle
             className="loader-ring loader-ring-b"
             cx="120"
@@ -62,7 +62,7 @@ export default function Loader() {
             strokeDashoffset="-110"
             strokeLinecap="round"
           ></circle>
-          {/* Left circle */}
+ 
           <circle
             className="loader-ring loader-ring-c"
             cx="85"
@@ -74,7 +74,7 @@ export default function Loader() {
             strokeDasharray="0 440"
             strokeLinecap="round"
           ></circle>
-          {/* Right circle */}
+   
           <circle
             className="loader-ring loader-ring-d"
             cx="155"
@@ -86,7 +86,7 @@ export default function Loader() {
             strokeDasharray="0 440"
             strokeLinecap="round"
           ></circle>
-        </svg>
+        </svg> */}
       </div>
       {/* Overlay sections for transition effect */}
       <div className="loader-section section-left"></div>
