@@ -115,6 +115,9 @@
   }
 }
 @media screen and (max-width: 500px) {
+  .perks_main {
+    margin-top: 250px;
+  }
   .perks_slider .slick-slide {
     height: 350px;
   }
