@@ -5,6 +5,7 @@ import Loader from '../Loader/Loader'
 import Perks from '../Perks/Perks'
 
 import Updates from '../Updates/Updates'
+import Teams from '../Teams/Teams'
 
 const Home = () => {
   return (
@@ -12,6 +13,7 @@ const Home = () => {
       <Loader/>
       <About />
       <Perks />
+      <Teams/>
       <Updates />
       <Contact />
     </div>

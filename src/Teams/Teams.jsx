@@ -1,0 +1,69 @@
+import React from "react";
+import './teams.css'; // Make sure the path is correct
+import image from '../assets/vinita.png';
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay } from 'swiper/modules';
+import 'swiper/css';
+
+function Teams() {
+
+
+  const slides = [
+    {
+      name: "Dr.Vinita Raj",
+      position: "Co-Founder",
+      description: "Dr. Vinita Raj, a dynamic entrepreneur and the visionary behind *Word Dealers Pvt. Ltd., is a force to be reckoned with. She has started her career with IIM Indore and Narsee Monjee, Mumbai. Beyond her business acumen, Dr. Raj harbors a deep passion for fashion, a passion that culminated in her crowning as Mrs. Chennai 2023. She is also a Fashion Brand Ambassador of Research Foundation of India in 158 Countries. Multifaceted career as an entrepreneur, orator, and advocate is marked by a steadfast commitment to women&apos;s empowerment. Implementing a pioneering work-from-home policy exclusively for women at Word Dealers, Dr. Raj has carved a niche for herself as a champion of gender equality. This innovative approach has garnered international acclaim, with invitations to speak at the US Consulate and recognition as one of SheInspires, England Top 6 Change Making Women Entrepreneurs globally. Her exceptional leadership was further validated by the prestigious Economic Times Women Entrepreneur of the Year 2022 award.",
+      image: image,
+    },
+    {
+      name: "Dr.Vinita Raj",
+      position: "Co-Founder",
+      description: "Dr. Vinita Raj, a dynamic entrepreneur and the visionary behind *Word Dealers Pvt. Ltd., is a force to be reckoned with. She has started her career with IIM Indore and Narsee Monjee, Mumbai. Beyond her business acumen, Dr. Raj harbors a deep passion for fashion, a passion that culminated in her crowning as Mrs. Chennai 2023. She is also a Fashion Brand Ambassador of Research Foundation of India in 158 Countries. Multifaceted career as an entrepreneur, orator, and advocate is marked by a steadfast commitment to women&apos;s empowerment. Implementing a pioneering work-from-home policy exclusively for women at Word Dealers, Dr. Raj has carved a niche for herself as a champion of gender equality. This innovative approach has garnered international acclaim, with invitations to speak at the US Consulate and recognition as one of SheInspires, England Top 6 Change Making Women Entrepreneurs globally. Her exceptional leadership was further validated by the prestigious Economic Times Women Entrepreneur of the Year 2022 award.",
+      image: image,
+    },
+    {
+      name: "Dr.Vinita Raj",
+      position: "Co-Founder",
+      description: "Dr. Vinita Raj, a dynamic entrepreneur and the visionary behind *Word Dealers Pvt. Ltd., is a force to be reckoned with. She has started her career with IIM Indore and Narsee Monjee, Mumbai. Beyond her business acumen, Dr. Raj harbors a deep passion for fashion, a passion that culminated in her crowning as Mrs. Chennai 2023. She is also a Fashion Brand Ambassador of Research Foundation of India in 158 Countries. Multifaceted career as an entrepreneur, orator, and advocate is marked by a steadfast commitment to women&apos;s empowerment. Implementing a pioneering work-from-home policy exclusively for women at Word Dealers, Dr. Raj has carved a niche for herself as a champion of gender equality. This innovative approach has garnered international acclaim, with invitations to speak at the US Consulate and recognition as one of SheInspires, England Top 6 Change Making Women Entrepreneurs globally. Her exceptional leadership was further validated by the prestigious Economic Times Women Entrepreneur of the Year 2022 award.",
+      image: image,
+    }]
+
+  return (
+    <div className="slider-container">
+      <h1 className="heading">Our Team</h1>
+      <div className="teams-carousel">
+        
+         <Swiper
+           modules={[Autoplay]}
+           spaceBetween={50}
+           slidesPerView={1}
+           loop={true}
+           autoplay={{ delay: 10000 }} 
+         >
+          {slides.map((slide, index) => (
+            <SwiperSlide key={index}>
+              <div className="slide" key={index}>
+                <div className="slide_card">
+                  <div className="text_content">
+                    <div className="headers">
+                      <h1>{slide.name}</h1><h1>|</h1>
+                      <h3>{slide.position}</h3>
+                    </div>
+                    <p>{slide.description}</p>
+                  </div>
+                  <div className="image">
+                    <img src={slide.image} alt="team-member" />
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+      
+    </div>
+  );
+}
+
+export default Teams;

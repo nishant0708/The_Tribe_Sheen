@@ -15,7 +15,7 @@ export default function Updates() {
             <h1 className='updatetitle'>
                 Updates
             </h1>
-            <div className="carousel slider-container">
+            <div className="carousel">
                 <Swiper
                     modules={[Autoplay]}
                     spaceBetween={50}
