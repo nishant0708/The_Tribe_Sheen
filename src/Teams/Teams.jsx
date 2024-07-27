@@ -30,7 +30,7 @@ function Teams() {
     }]
 
   return (
-    <div className="slider-container">
+    <div className="slider-container" id="teams">
       <h1 className="heading">Our Team</h1>
       <div className="teams-carousel">
         

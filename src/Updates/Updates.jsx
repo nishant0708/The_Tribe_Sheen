@@ -11,7 +11,7 @@ const updates = [UpdateImage, UpdateImage, UpdateImage, UpdateImage];
 
 export default function Updates() {
     return (
-        <div className='updatescontainer'>
+        <div className='updatescontainer' id='updates'>
             <h1 className='updatetitle'>
                 Updates
             </h1>
