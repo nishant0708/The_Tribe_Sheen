@@ -39,7 +39,7 @@ function Teams() {
            spaceBetween={50}
            slidesPerView={1}
            loop={true}
-           autoplay={{ delay: 10000 }} 
+           autoplay={{ delay: 3500 }} 
          >
           {slides.map((slide, index) => (
             <SwiperSlide key={index}>
@@ -57,7 +57,7 @@ function Teams() {
                   </div>
                 </div>
               </div>
-            </SwiperSlide>
+             </SwiperSlide>
           ))}
         </Swiper>
       </div>
