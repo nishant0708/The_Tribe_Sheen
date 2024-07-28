@@ -1,6 +1,9 @@
 import React from 'react'
 import About from '../About/About'
 import Contact from '../Contact/Contact'
+
+import Sponsors from '../Sponsors/sponsors'
+
 import Loader from '../Loader/Loader'
 import Perks from '../Perks/Perks'
 
@@ -12,6 +15,7 @@ const Home = () => {
       <About />
       <Perks />
       <Contact />
+      <Sponsors/>
     </div>
   )
 }
