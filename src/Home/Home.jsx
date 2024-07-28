@@ -13,14 +13,14 @@ import Navbar from '../Navbar/Navbar'
 const Home = () => {
   return (
     <div className="home">
-      <Loader/>
-      <Navbar/>
+      <Loader />
+      <Navbar />
       <About />
       <Perks />
-      <Teams/>
+      <Sponsors />
+      <Teams />
       <Updates />
       <Contact />
-      <Sponsors/>
     </div>
   )
 }
