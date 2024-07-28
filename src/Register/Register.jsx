@@ -28,6 +28,7 @@ const Register = () => {
             rightProfile: null,
         },
         idProof: null,
+        payment: null,
         description: '',
         confidentSize: '',
         auditionDate: '',
@@ -38,6 +39,7 @@ const Register = () => {
         leftProfile: '',
         rightProfile: '',
         idProof: '',
+        payment: ''
     });
     const [crop, setCrop] = useState({ x: 0, y: 0 });
     const [zoom, setZoom] = useState(1);
@@ -47,6 +49,7 @@ const Register = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [showCropModal, setShowCropModal] = useState(false);
     const [idProofPreview, setIdProofPreview] = useState(null);
+    const [payment, setPayment] = useState(null);
     const [errors, setErrors] = useState({});
 
     const onDrop = useCallback((acceptedFiles, photoType) => {
@@ -68,6 +71,18 @@ const Register = () => {
         }));
         setIdProofPreview(URL.createObjectURL(file));
     };
+    const onDropPayment = (acceptedFiles) => {
+        const file = acceptedFiles[0];
+        setFormData((prevState) => ({
+            ...prevState,
+            payment: file,
+        }));
+        setFileNames((prevState) => ({
+            ...prevState,
+            payment: file.name,
+        }));
+        setPayment(URL.createObjectURL(file));
+    };
 
     const { getRootProps: getFrontProps, getInputProps: getFrontInputProps } = useDropzone({
         accept: { 'image/*': [] },
@@ -88,6 +103,10 @@ const Register = () => {
     const { getRootProps: getIdProps, getInputProps: getIdInputProps } = useDropzone({
         accept: { 'image/*': [] },
         onDrop: onDropIdProof,
+    });
+    const { getRootProps: getPaymentProps, getInputProps: getPaymentInputProps } = useDropzone({
+        accept: { 'image/*': [] },
+        onDrop: onDropPayment,
     });
 
     const handleInputChange = (e) => {
@@ -528,11 +547,36 @@ const Register = () => {
                             <p className="form-label day">Registration Fee: <span className='black'>Rs. 1000/-</span></p>
                         </div>
                         <div className="qr-code-section">
-    <p className="qr-code-title pinktxt">Scan this QR to pay</p>
-    <div className="qr-code-container">
-        <img src={QR} alt="QR Code for payment" className="qr-code-image" />
-    </div>
-</div>
+                            <p className="qr-code-title pinktxt">Scan this QR to pay</p>
+                            <div className="qr-code-container">
+                                <img src={QR} alt="QR Code for payment" className="qr-code-image" />
+                            </div>
+                        </div>
+
+                        <div className="form-field full-width">
+                            <label className="form-label">Submit your payment screenshot here: </label>
+                            <div {...getPaymentProps()} className="dropzone form-input idproof">
+                                <input {...getPaymentInputProps()} required />
+                                {payment ? (
+                                    <>
+                                        <img
+                                            src={payment}
+                                            alt="Payment Preview"
+                                            style={{ maxWidth: '100%', maxHeight: '200px' }}
+                                        />
+                                        <p>Click here to reupload</p>
+                                    </>
+                                ) : (
+                                    <p>
+                                        <span className='pinktxt'>
+                                            Browse Files <br />
+                                        </span>
+                                        Drag n drop a file here
+                                    </p>
+                                )}
+                                {fileNames.payment && <p>Selected file: {fileNames.payment}</p>}
+                            </div>
+                        </div>
 
                     </div>
                     <button type="submit" className="submit-button">

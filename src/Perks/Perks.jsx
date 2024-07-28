@@ -70,7 +70,7 @@ const Perks = () => {
   }
 
   return (
-    <div className="perks_main">
+    <div className="perks_main" id='perks'>
       <div className="perks_content">
         <div className="perks_Heading">
           <h1>Perks</h1>

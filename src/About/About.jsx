@@ -19,7 +19,7 @@ const About = () => {
   }, [])
 
   return (
-    <div className="About_us">
+    <div className="About_us" id='about'>
       <div className="about_main">
         <div className="about_content">
           <h2>ABOUT US</h2>
