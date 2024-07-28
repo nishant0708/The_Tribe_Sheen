@@ -1,15 +1,19 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay } from 'swiper/modules';
+import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import './updates.css';
-
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 import UpdateImage from '../assets/updates.png';
 
 const updates = [UpdateImage, UpdateImage, UpdateImage, UpdateImage];
 
 
 export default function Updates() {
+    const prevRef = useRef(null);
+    const nextRef = useRef(null);
+
     return (
         <div className='updatescontainer' id='updates'>
             <h1 className='updatetitle'>
@@ -17,9 +21,15 @@ export default function Updates() {
             </h1>
             <div className="carousel">
                 <Swiper
-                    modules={[Autoplay]}
+                    modules={[Navigation, Pagination, Autoplay]}
+                    style={{
+                        "--swiper-navigation-color": "#ff9bbd",
+                        "--swiper-navigation-size": "8px",
+                      }}
                     spaceBetween={50}
                     slidesPerView={1}
+                    navigation
+                    pagination={{ clickable: true }}
                     loop={true}
                     autoplay={{ delay: 3000 }}
                 >
@@ -29,6 +39,10 @@ export default function Updates() {
                         </SwiperSlide>
                     ))}
                 </Swiper>
+                <div className="custom-navigation">
+                    <button ref={prevRef} className="nav-button prev">&lt;</button>
+                    <button ref={nextRef} className="nav-button next">&gt;</button>
+                </div>
             </div>
         </div>
     )
