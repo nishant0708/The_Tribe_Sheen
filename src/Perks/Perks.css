@@ -97,7 +97,9 @@
     transform: scale(0.4) translateY(-120px);
     opacity: 0.8;
   }
-
+  .perks_slider .slick-slide {
+    height: 400px !important;
+  }
   .perks_slider .slick-center {
     transform: scale(0.7);
     opacity: 1;
@@ -105,7 +107,7 @@
 }
 @media screen and (max-width: 768px) {
   .perks_slider .slick-slide {
-    height: 400px;
+    height: 400px !important;
   }
   .perks_Heading {
     margin-bottom: 30px;
