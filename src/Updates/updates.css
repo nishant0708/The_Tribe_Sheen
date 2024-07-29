@@ -3,7 +3,16 @@
     /* height: 100vh; */
     padding-bottom: 5rem;
     overflow-x: hidden;
+    z-index: 50;
+    position: relative;
 }
+.pinkflwr{
+    position: absolute;
+    top: 0%;
+    left: 0;
+    width: 17%;
+    z-index: 0;
+  }
 .updatetitle{
     font-weight: 800;
     text-align: center;

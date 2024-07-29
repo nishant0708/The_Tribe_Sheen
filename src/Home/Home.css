@@ -1,14 +1,23 @@
-.register-link {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #bc1522;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    margin-top: 20px;
-  }
-  
-  .register-link:hover {
-    background-color: #bc1523b0;
-  }
+.home {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+}
+
+.newspaper-container {
+  position: absolute;
+  bottom: -10%; /* This cuts off 10% of the newspaper from the bottom */
+  left: -22%;
+  width: 85%;
+  z-index: 0;
+}
+
+.newspaper {
+  width: 100%;
+  display: block;
+}

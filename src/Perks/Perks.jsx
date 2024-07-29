@@ -6,7 +6,7 @@ import 'slick-carousel/slick/slick-theme.css'
 import perks from '../assets/perks.svg'
 import perks1 from '../assets/perks1.svg'
 import perks2 from '../assets/perks2.svg'
-
+import YellowFlwr from '../assets/yellowflwr.png'
 // Sample data array
 const perksData = [
   {
@@ -72,6 +72,9 @@ const Perks = () => {
   return (
     <div className="perks_main" id='perks'>
       <div className="perks_content">
+        {/* <div className="yellow-container"> */}
+          <img src={YellowFlwr} alt="Yellow Flower" className='yellowflwr' />
+        {/* </div> */}
         <div className="perks_Heading">
           <h1>Perks</h1>
         </div>

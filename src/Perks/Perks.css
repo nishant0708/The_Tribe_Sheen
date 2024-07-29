@@ -2,8 +2,15 @@
   padding: 20px 60px;
   /* min-height: 100vh; */
   background-color: #ff9bbd;
-  overflow: hidden; /* Ensures no overflow */
+  overflow: hidden; 
   position: relative;
+}
+.yellowflwr{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 15%;
+  z-index: 0;
 }
 
 .perks_content {

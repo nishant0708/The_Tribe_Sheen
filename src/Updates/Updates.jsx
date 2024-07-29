@@ -6,6 +6,7 @@ import './updates.css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import UpdateImage from '../assets/updates.png';
+import PinkFlwr from '../assets/pinkflwr.png';
 
 const updates = [UpdateImage, UpdateImage, UpdateImage, UpdateImage];
 
@@ -19,6 +20,7 @@ export default function Updates() {
             <h1 className='updatetitle'>
                 Updates
             </h1>
+            <img src={PinkFlwr} alt="Pink Flower" className='pinkflwr' />
             <div className="carousel">
                 <Swiper
                     modules={[Navigation, Pagination, Autoplay]}
