@@ -78,10 +78,10 @@ const Perks = () => {
         <motion.img
           src={YellowFlwr}
           alt="Yellow Flower"
-          className='yellowflwr'
+          className='yellowflwrp'
           initial={{ opacity: 0, rotate: 0 }}
-          whileInView={{ opacity: 1, rotate: 180 }}
-          transition={{ duration: 1.5 }}
+          whileInView={{ opacity: 1, rotate: 200 }}
+          transition={{ duration: 1 }}
         />
         <motion.img
           src={PinkFlwr}
@@ -89,7 +89,7 @@ const Perks = () => {
           className='pinkflwrp'
           initial={{ opacity: 0, rotate: 0 }}
           whileInView={{ opacity: 1, rotate: 180 }}
-          transition={{ duration: 1.5 }}
+          transition={{ duration: 1 }}
         />
 
 

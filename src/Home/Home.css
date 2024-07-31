@@ -4,11 +4,6 @@
   overflow: hidden;
 }
 
-.content {
-  position: relative;
-  z-index: 1;
-}
-
 .newspaper-container {
   position: absolute;
   bottom: -10%; /* This cuts off 10% of the newspaper from the bottom */
@@ -28,4 +23,30 @@
   right: 1rem;
   width: 15%;
   z-index: 0;
+}
+@media (max-width: 1025px){
+  .newspaper-container {
+    bottom: -5%; /* This cuts off 10% of the newspaper from the bottom */
+  }
+  
+  .newspaper {
+    width: 100%;
+    display: block;
+  }
+}
+@media (max-width:500px){
+  .floweroutline{
+    width: 35%;
+    bottom: 5rem;
+  } 
+  .newspaper-container {
+    bottom: -5%; /* This cuts off 10% of the newspaper from the bottom */
+    left: -25%;
+    width: 100%;
+  }
+  
+  .newspaper {
+    width: 100%;
+    display: block;
+  }
 }

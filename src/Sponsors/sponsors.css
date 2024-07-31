@@ -111,5 +111,10 @@
     .sponsor-image {
       width: 100px;
     }
+    .pinkbow{
+      top: -3rem;
+      left: 1rem;
+      width: 28%;
+    }
   }
   
