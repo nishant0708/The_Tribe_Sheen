@@ -63,7 +63,7 @@
     background: none;
   }
   .mainpage__topbar__subheader {
-    width: 500px;
+    width: 500px !important;
   }
   .mainpage__topbar__subheader p {
     font-size: 12px !important;
@@ -71,7 +71,7 @@
   .mainpage__topbar {
     position: absolute;
     z-index: 4;
-    top: 50%;
+    top: 8%;
     left: 50%;
     transform: translate(-50%, -50%) !important;
   }
@@ -79,6 +79,9 @@
 @media (max-width: 500px) {
   .mainpage__topbar__logo img {
     width: 250px !important;
+  }
+  .mainpage__topbar__subheader {
+    width: 300px !important;
   }
 }
 
