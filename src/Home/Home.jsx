@@ -1,6 +1,11 @@
 import React from 'react'
 import About from '../About/About'
 import Contact from '../Contact/Contact'
+import './Home.css'
+import Team from '../Our_Team/Team'
+import  { BreakpointProvider } from 'react-socks';
+import { DashboardComponent } from '../Dashboard/DashboardComponent';
+
 
 import Sponsors from '../Sponsors/sponsors'
 
@@ -14,6 +19,10 @@ const Home = () => {
   return (
     <div className="home">
       <Loader />
+        <BreakpointProvider>
+      <DashboardComponent />
+      </BreakpointProvider>
+      <About />
       <Navbar />
       <About />
       <Perks />
@@ -22,7 +31,7 @@ const Home = () => {
       <Updates />
       <Contact />
     </div>
-  )
+  )  
 }
 
 export default Home
