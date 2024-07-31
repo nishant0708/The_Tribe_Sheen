@@ -1,0 +1,132 @@
+.perks_main {
+  padding: 20px 60px;
+  /* min-height: 100vh; */
+  background-color: #ff9bbd;
+  overflow: hidden; /* Ensures no overflow */
+  position: relative;
+}
+
+.perks_content {
+  max-width: 1300px;
+  margin: auto;
+}
+.perks_Heading {
+  margin-bottom: 60px;
+}
+.perks_Heading h1 {
+  font-size: 68px;
+  text-align: center;
+}
+
+.perks_slider .slick-slide {
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+  opacity: 0.5;
+  transform: scale(0.7) translateY(-120px);
+
+  overflow: visible;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  height: 75vh; /* Increase height of slider track */
+}
+
+.perks_slider .slick-center {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+.perks_box {
+  background-color: white;
+  width: 100%;
+  max-width: 400px; /* Ensure consistent width */
+  min-width: 400px; /* Ensure consistent width */
+  height: 235px; /* Adjust the height as needed */
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 20px;
+  border-radius: 20px;
+  margin: 10px;
+  /* margin: 0 10px; Ensure no extra space */
+  box-sizing: border-box;
+}
+
+.perks_img_container {
+  width: 300px;
+  height: 300px;
+  margin-top: -85px;
+}
+
+.perks_box_content {
+  padding: 20px;
+  border-radius: 20px;
+  transform: translateY(0px);
+}
+
+.perks_title {
+  font-size: 20px;
+  font-weight: 800;
+  margin: 0;
+  color: black;
+}
+
+.perks_desc {
+  font-size: 14px;
+}
+/* Media query for screen width 1080px */
+@media screen and (max-width: 1080px) {
+  .perks_slider .slick-slide {
+    height: 55vh;
+  }
+  .perks_slider .slick-slide {
+    transform: scale(0.5) translateY(-120px);
+    opacity: 0.8;
+  }
+
+  .perks_slider .slick-center {
+    transform: scale(0.8);
+    opacity: 1;
+  }
+}
+@media screen and (max-width: 900px) {
+  .perks_slider .slick-slide {
+    transform: scale(0.4) translateY(-120px);
+    opacity: 0.8;
+  }
+  .perks_slider .slick-slide {
+    height: 400px !important;
+  }
+  .perks_slider .slick-center {
+    transform: scale(0.7);
+    opacity: 1;
+  }
+}
+@media screen and (max-width: 768px) {
+  .perks_slider .slick-slide {
+    height: 400px !important;
+  }
+  .perks_Heading {
+    margin-bottom: 30px;
+  }
+  .perks_Heading h1 {
+    font-size: 36px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .perks_main {
+    margin-top: 250px;
+  }
+  .perks_slider .slick-slide {
+    height: 350px;
+  }
+  .perks_Heading {
+    margin-bottom: 30px;
+  }
+  .perks_Heading h1 {
+    font-size: 36px;
+  }
+}

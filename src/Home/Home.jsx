@@ -7,14 +7,28 @@ import  { BreakpointProvider } from 'react-socks';
 import { DashboardComponent } from '../Dashboard/DashboardComponent';
 
 
+import Sponsors from '../Sponsors/sponsors'
+
+import Loader from '../Loader/Loader'
+import Perks from '../Perks/Perks'
+import Updates from '../Updates/Updates'
+import Teams from '../Teams/Teams'
+import Navbar from '../Navbar/Navbar'
+
 const Home = () => {
   return (
     <div className="home">
-      <BreakpointProvider>
+      <Loader />
+        <BreakpointProvider>
       <DashboardComponent />
       </BreakpointProvider>
       <About />
-      <Team />
+      <Navbar />
+      <About />
+      <Perks />
+      <Sponsors />
+      <Teams />
+      <Updates />
       <Contact />
     </div>
   )  
