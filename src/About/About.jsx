@@ -1,25 +1,25 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import './About.css'
 import { motion } from 'framer-motion'
 const About = () => {
-  const updateMargin = () => {
-    const aboutMain = document.querySelector('.about_main')
-    const aboutUs = document.querySelector('.About_us')
-    const aboutMainHeight = aboutMain.offsetHeight
-    aboutUs.style.marginBottom = aboutMainHeight + 'px'
-  }
+  // const updateMargin = () => {
+  //   const aboutMain = document.querySelector('.about_main')
+  //   const aboutUs = document.querySelector('.About_us')
+  //   const aboutMainHeight = aboutMain.offsetHeight
+  //   aboutUs.style.marginBottom = aboutMainHeight + 'px'
+  // }
 
-  useEffect(() => {
-    updateMargin()
-    window.addEventListener('resize', updateMargin)
+  // useEffect(() => {
+  //   updateMargin()
+  //   window.addEventListener('resize', updateMargin)
 
-    return () => {
-      window.removeEventListener('resize', updateMargin)
-    }
-  }, [])
+  //   return () => {
+  //     window.removeEventListener('resize', updateMargin)
+  //   }
+  // }, [])
 
   return (
-    <div className="About_us" id='about'>
+    <div className="About_us" id="about">
       <div className="about_main">
         <div className="about_content"
         

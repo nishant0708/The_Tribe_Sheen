@@ -8,17 +8,21 @@ import Perks from '../Perks/Perks'
 import Updates from '../Updates/Updates'
 import Teams from '../Teams/Teams'
 import Navbar from '../Navbar/Navbar'
-//Images
 import Newpaper from '../assets/newspaper.png'
 import Flower from '../assets/flowoutline.png'
 import './Home.css';
+
+import { Dashboard } from '../Dashboard/Dashboard'
+
 
 const Home = () => {
   return (
     <div className="home">
       <Loader />
       <Navbar />
+      <Dashboard />
       <About />
+
       <Perks />
       <Sponsors />
       <Teams />

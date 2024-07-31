@@ -88,19 +88,19 @@ const Contact = () => {
                 <div>
                   <FaLocationDot />
                 </div>
-                address
+                1020, 1st floor, Scheme No 114, Part 1, Vijay Nagar, Indore
               </li>
               <li>
                 <div>
                   <IoIosMail />
                 </div>
-                xyz@gmail.com
+                tribesheen@gmail.com
               </li>
               <li>
                 <div>
                   <IoCall />
                 </div>
-                91 9864563789
+                +91 78158683456
               </li>
             </ul>
           </div>
