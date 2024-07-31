@@ -5,6 +5,7 @@ import { IoIosMail } from 'react-icons/io'
 import { IoCall } from 'react-icons/io5'
 import { ref, set } from 'firebase/database'
 import { database } from '../firebaseConfig'
+import { SiTicktick } from "react-icons/si";
 import './Contact.css'
 
 // UUID generation function
@@ -107,7 +108,11 @@ const Contact = () => {
             <span className="close" onClick={() => setShowModal(false)}>
               &times;
             </span>
-            <p>Thanks for subscribing to our newsletter!</p>
+            <div className='doneicon'>
+            <SiTicktick />
+            </div> 
+            <p>
+           Thanks for subscribing to our newsletter!</p>
           </div>
         </div>
       )}
