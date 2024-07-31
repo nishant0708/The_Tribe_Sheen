@@ -22,7 +22,6 @@ export default function Updates() {
             <h1 className='updatetitle'>
                 Updates
             </h1>
-            {/* <img src={PinkFlwr} alt="Pink Flower" className='yellowflwr' /> */}
             <motion.img
                 src={PinkFlwr}
                 alt="Pink Flower"
@@ -40,9 +39,12 @@ export default function Updates() {
                 transition={{ duration: 1 }}
 
             />
-            {/* <img src={PinkFlwrDown} alt="Pink Flower" className='pinkflwru' /> */}
 
-            <div className="carousel">
+            <motion.div className="carousel"
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: false, amount: 0.5 }}>
                 <Swiper
                     modules={[Navigation, Pagination, Autoplay]}
                     style={{
@@ -66,7 +68,7 @@ export default function Updates() {
                     <button ref={prevRef} className="nav-button prev">&lt;</button>
                     <button ref={nextRef} className="nav-button next">&gt;</button>
                 </div>
-            </div>
+            </motion.div>
         </div>
     )
 }

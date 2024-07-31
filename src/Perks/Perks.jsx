@@ -99,7 +99,12 @@ const Perks = () => {
         </div>
         <Slider {...settings} className="perks_slider">
           {perksData.map((perk, index) => (
-            <div key={index} className="perks_box">
+            <motion.div key={index} className="perks_box"
+              initial={{ opacity: 0, y: 100 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+              viewport={{ once: false, amount: 0.5 }}
+            >
               <img
                 src={perk.image}
                 className="perks_img_container"
@@ -109,7 +114,7 @@ const Perks = () => {
                 <p className="perks_title">{perk.title}</p>
                 <p className="perks_desc">{perk.description}</p>
               </div>
-            </div>
+            </motion.div>
           ))}
         </Slider>
       </div>

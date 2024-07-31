@@ -59,17 +59,20 @@
 }
 
 .navbar-links li:hover {
-  background-color: #bc1523bf;
+  background-color: #af174ab6;
 }
 
 @media (max-width: 768px) {
+  .navbar_main{
+    height: 3rem;
+  }
   .navbar-toggle {
     display: block;
     position: absolute;
-    top: 10px;
+    top: 0;
     right: 10px;
     z-index: 1001;
-    color: brown;
+    color: #af174a;
   }
 
   .icon-transition {
@@ -78,6 +81,7 @@
 
   .icon-transition.cross {
     transform: rotate(180deg);
+    color: white;
   }
 
   .navbar-links {
@@ -85,7 +89,7 @@
     top: 0;
     right: 0; /* Changed from left: 0 to right: 0 */
     width: 100%;
-    height: 110vh;
+    height: 105vh;
     background-color: rgba(188, 21, 34, 0.95);
     flex-direction: column;
     justify-content: center;

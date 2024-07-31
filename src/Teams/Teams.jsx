@@ -64,7 +64,12 @@ function Teams() {
         >
           {slides.map((slide, index) => (
             <SwiperSlide key={index}>
-              <div className="slide" key={index}>
+              <motion.div className="slide" key={index}
+              initial={{ opacity: 0, y: 100 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              viewport={{ once: false, amount: 0.5 }}
+              >
                 <div className="slide_card">
                   <div className="text_content">
                     <div className="headers">
@@ -77,7 +82,7 @@ function Teams() {
                     <img src={slide.image} alt="team-member" />
                   </div>
                 </div>
-              </div>
+              </motion.div>
             </SwiperSlide>
           ))}
         </Swiper>
