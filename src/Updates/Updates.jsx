@@ -6,7 +6,9 @@ import './updates.css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import UpdateImage from '../assets/updates.png';
-import PinkFlwr from '../assets/pinkflwr.png';
+import PinkFlwr from '../assets/flowoutline.png';
+import PinkFlwrDown from '../assets/pinkflwr.png';
+import { motion } from 'framer-motion'
 
 const updates = [UpdateImage, UpdateImage, UpdateImage, UpdateImage];
 
@@ -20,14 +22,33 @@ export default function Updates() {
             <h1 className='updatetitle'>
                 Updates
             </h1>
-            <img src={PinkFlwr} alt="Pink Flower" className='pinkflwr' />
+            {/* <img src={PinkFlwr} alt="Pink Flower" className='yellowflwr' /> */}
+            <motion.img
+                src={PinkFlwr}
+                alt="Pink Flower"
+                className='yellowflwr'
+                initial={{ opacity: 0, rotate: 0 }}
+                whileInView={{ opacity: 1, rotate: 360 }}
+                transition={{ duration: 1.5 }}
+            />
+            <motion.img
+                src={PinkFlwrDown}
+                alt="Pink Flower"
+                className='pinkflwru'
+                initial={{ opacity: 0, rotate: 180 }}
+                whileInView={{ opacity: 1, rotate: 360 }}
+                transition={{ duration: 1 }}
+
+            />
+            {/* <img src={PinkFlwrDown} alt="Pink Flower" className='pinkflwru' /> */}
+
             <div className="carousel">
                 <Swiper
                     modules={[Navigation, Pagination, Autoplay]}
                     style={{
                         "--swiper-navigation-color": "#ff9bbd",
                         "--swiper-navigation-size": "8px",
-                      }}
+                    }}
                     spaceBetween={50}
                     slidesPerView={1}
                     navigation

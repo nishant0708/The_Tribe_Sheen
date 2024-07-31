@@ -1,12 +1,22 @@
+.ourteams{
+  position: relative;
+}
 .slider-container {
   width: 80%;
+  max-width: 1300px;
   margin: 0 auto;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
+  position: relative;
 }
-
+.pinkoutline{
+  position: absolute;
+  width: 15%;
+  right: 02rem;
+  top: 0;
+}
 .heading {
   width: 100%;
   display: flex;

@@ -7,6 +7,9 @@ import perks from '../assets/perks.svg'
 import perks1 from '../assets/perks1.svg'
 import perks2 from '../assets/perks2.svg'
 import YellowFlwr from '../assets/yellowflwr.png'
+import PinkFlwr from '../assets/pinkflwr.png';
+import { motion } from 'framer-motion'
+
 // Sample data array
 const perksData = [
   {
@@ -72,8 +75,24 @@ const Perks = () => {
   return (
     <div className="perks_main" id='perks'>
       <div className="perks_content">
-        {/* <div className="yellow-container"> */}
-          <img src={YellowFlwr} alt="Yellow Flower" className='yellowflwr' />
+        <motion.img
+          src={YellowFlwr}
+          alt="Yellow Flower"
+          className='yellowflwr'
+          initial={{ opacity: 0, rotate: 0 }}
+          whileInView={{ opacity: 1, rotate: 180 }}
+          transition={{ duration: 1.5 }}
+        />
+        <motion.img
+          src={PinkFlwr}
+          alt="Pink Flower"
+          className='pinkflwrp'
+          initial={{ opacity: 0, rotate: 0 }}
+          whileInView={{ opacity: 1, rotate: 180 }}
+          transition={{ duration: 1.5 }}
+        />
+
+
         {/* </div> */}
         <div className="perks_Heading">
           <h1>Perks</h1>

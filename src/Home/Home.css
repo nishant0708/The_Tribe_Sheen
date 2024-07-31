@@ -12,12 +12,20 @@
 .newspaper-container {
   position: absolute;
   bottom: -10%; /* This cuts off 10% of the newspaper from the bottom */
-  left: -22%;
-  width: 85%;
+  left: -25%;
+  width: 80%;
   z-index: 0;
 }
 
 .newspaper {
   width: 100%;
   display: block;
+}
+
+.floweroutline{
+  position: absolute;
+  bottom: 9rem;
+  right: 1rem;
+  width: 15%;
+  z-index: 0;
 }
