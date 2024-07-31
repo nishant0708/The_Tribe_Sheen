@@ -6,7 +6,7 @@ import { IoCall } from 'react-icons/io5'
 import { ref, set } from 'firebase/database'
 import { database } from '../firebaseConfig'
 import './Contact.css'
-
+import { motion } from 'framer-motion'
 // UUID generation function
 function generateUUID() {
   var d = new Date().getTime()
@@ -52,7 +52,12 @@ const Contact = () => {
   return (
     <div className="Contact_us" id="contact">
       <div className="Newsletter">
-        <div className="news_content">
+        <motion.div className="news_content"
+        initial={{ opacity: 0}}
+        whileInView={{ opacity: 1}}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true, amount: 0.5 }}
+        >
           <h3>Stay updated with our latest news!</h3>
           <p>
             Subscribe to our newsletter to receive exclusive updates,
@@ -70,7 +75,7 @@ const Contact = () => {
               <IoSend />
             </button>
           </div>
-        </div>
+        </motion.div>
       </div>
       <div className="contact_main">
         <div className="contact_content">

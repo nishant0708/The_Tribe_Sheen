@@ -6,6 +6,9 @@ import './updates.css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import UpdateImage from '../assets/updates.png';
+import PinkFlwr from '../assets/flowoutline.png';
+import PinkFlwrDown from '../assets/pinkflwr.png';
+import { motion } from 'framer-motion'
 
 const updates = [UpdateImage, UpdateImage, UpdateImage, UpdateImage];
 
@@ -19,13 +22,37 @@ export default function Updates() {
             <h1 className='updatetitle'>
                 Updates
             </h1>
-            <div className="carousel">
+            <motion.img
+                src={PinkFlwr}
+                alt="Pink Flower"
+                className='yellowflwr'
+                initial={{ opacity: 0, rotate: 0 }}
+                whileInView={{ opacity: 1, rotate: 360 }}
+                transition={{ duration: 1.5 }}
+                viewport={{ once: true, amount: 0.5 }}
+            />
+            <motion.img
+                src={PinkFlwrDown}
+                alt="Pink Flower"
+                className='pinkflwru'
+                initial={{ opacity: 0, rotate: 180 }}
+                whileInView={{ opacity: 1, rotate: 360 }}
+                transition={{ duration: 1 }}
+                viewport={{ once: true, amount: 0.5 }}
+
+            />
+
+            <motion.div className="carousel"
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true, amount: 0.5 }}>
                 <Swiper
                     modules={[Navigation, Pagination, Autoplay]}
                     style={{
                         "--swiper-navigation-color": "#ff9bbd",
                         "--swiper-navigation-size": "8px",
-                      }}
+                    }}
                     spaceBetween={50}
                     slidesPerView={1}
                     navigation
@@ -43,7 +70,7 @@ export default function Updates() {
                     <button ref={prevRef} className="nav-button prev">&lt;</button>
                     <button ref={nextRef} className="nav-button next">&gt;</button>
                 </div>
-            </div>
+            </motion.div>
         </div>
     )
 }

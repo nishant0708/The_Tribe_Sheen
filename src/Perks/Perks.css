@@ -2,10 +2,23 @@
   padding: 20px 60px;
   /* min-height: 100vh; */
   background-color: #ff9bbd;
-  overflow: hidden; /* Ensures no overflow */
+  overflow: hidden;
   position: relative;
 }
-
+.yellowflwrp {
+  position: absolute;
+  top: 0;
+  left: 1rem;
+  width: 15%;
+  z-index: 0;
+}
+.pinkflwrp {
+  position: absolute;
+  bottom: 3rem;
+  right: 3rem;
+  width: 10%;
+  z-index: 0;
+}
 .perks_content {
   max-width: 1300px;
   margin: auto;
@@ -91,6 +104,15 @@
     transform: scale(0.8);
     opacity: 1;
   }
+  .yellowflwrp {
+    left: 3rem;
+    width: 20%;
+  }
+  .pinkflwrp {
+    bottom: 3rem;
+    right: 3rem;
+    width: 18%;
+}
 }
 @media screen and (max-width: 900px) {
   .perks_main {
@@ -118,6 +140,16 @@
   .perks_Heading h1 {
     font-size: 36px;
   }
+  .yellowflwrp {
+    left: 1rem;
+    top: 2rem;
+    width: 25%;
+  }
+  .pinkflwrp {
+    bottom: 1rem;
+    right: 2rem;
+    width: 18%;
+  }
 }
 @media screen and (max-width: 500px) {
   .perks_main {
@@ -131,5 +163,15 @@
   }
   .perks_Heading h1 {
     font-size: 36px;
+  }
+  .yellowflwrp {
+    left: 1rem;
+    top: 5rem;
+    width: 30%;
+  }
+  .pinkflwrp {
+    bottom: 1rem;
+    right: 2rem;
+    width: 25%;
   }
 }

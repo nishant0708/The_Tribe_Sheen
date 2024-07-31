@@ -1,14 +1,57 @@
-.register-link {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #bc1522;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    margin-top: 20px;
+.home {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.newspaper-container {
+  position: absolute;
+  bottom: -10%; /* This cuts off 10% of the newspaper from the bottom */
+  left: -25%;
+  width: 80%;
+  z-index: 0;
+}
+
+.newspaper {
+  width: 100%;
+  display: block;
+}
+
+.floweroutline{
+  position: absolute;
+  bottom: 9rem;
+  right: 1rem;
+  width: 15%;
+  z-index: 0;
+}
+@media (max-width: 1025px){
+  .newspaper-container {
+    bottom: -5%; /* This cuts off 10% of the newspaper from the bottom */
   }
   
-  .register-link:hover {
-    background-color: #bc1523b0;
+  .newspaper {
+    width: 100%;
+    display: block;
   }
+}
+@media (max-width:768px){
+  .newspaper-container{
+    display: none;
+  }
+}
+@media (max-width:500px){
+  .floweroutline{
+    width: 35%;
+    bottom: 5rem;
+  } 
+  .newspaper-container {
+    bottom: -5%; /* This cuts off 10% of the newspaper from the bottom */
+    left: -25%;
+    width: 100%;
+  }
+  
+  .newspaper {
+    width: 100%;
+    display: block;
+  }
+}

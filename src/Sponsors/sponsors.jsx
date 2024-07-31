@@ -3,7 +3,8 @@ import './sponsors.css';
 import sponsor1 from '../assets/s(1).png';
 import sponsor2 from '../assets/s(2).png';
 import sponsor3 from '../assets/s(3).png';
-
+import Bow from '../assets/pinkbow.png';
+import {motion} from 'framer-motion'
 const sponsors = [
   { id: 1, name: 'Sponsor 1', imgSrc: sponsor1 },
   { id: 2, name: 'Sponsor 2', imgSrc: sponsor2 },
@@ -15,11 +16,17 @@ const Sponsors = () => {
     <div className='sponsor-main'>
       <div className="sponsors-page">
         <h1>Sponsors</h1>
+        <img src={Bow} alt="Pink Bow" className='pinkbow' />
         <div className="sponsors-grid">
           {sponsors.map(sponsor => (
-            <div key={sponsor.id} className="sponsor-block">
+            <motion.div key={sponsor.id} className="sponsor-block"
+              initial={{ opacity: 0, y: 100 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+              viewport={{ once: true, amount: 0.3 }}
+            >
               <img src={sponsor.imgSrc} alt={sponsor.name} className="sponsor-image" />
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

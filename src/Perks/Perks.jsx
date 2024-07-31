@@ -6,6 +6,9 @@ import 'slick-carousel/slick/slick-theme.css'
 import perks from '../assets/perks.svg'
 import perks1 from '../assets/perks1.svg'
 import perks2 from '../assets/perks2.svg'
+import YellowFlwr from '../assets/yellowflwr.png'
+import PinkFlwr from '../assets/pinkflwr.png';
+import { motion } from 'framer-motion'
 
 // Sample data array
 const perksData = [
@@ -72,12 +75,38 @@ const Perks = () => {
   return (
     <div className="perks_main" id='perks'>
       <div className="perks_content">
+        <motion.img
+          src={YellowFlwr}
+          alt="Yellow Flower"
+          className='yellowflwrp'
+          initial={{ opacity: 0, rotate: 0 }}
+          whileInView={{ opacity: 1, rotate: 200 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true, amount: 0.5 }}
+        />
+        <motion.img
+          src={PinkFlwr}
+          alt="Pink Flower"
+          className='pinkflwrp'
+          initial={{ opacity: 0, rotate: 0 }}
+          whileInView={{ opacity: 1, rotate: 180 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true, amount: 0.5 }}
+        />
+
+
+        {/* </div> */}
         <div className="perks_Heading">
           <h1>Perks</h1>
         </div>
         <Slider {...settings} className="perks_slider">
           {perksData.map((perk, index) => (
-            <div key={index} className="perks_box">
+            <motion.div key={index} className="perks_box"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1}}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+              viewport={{ once: true, amount: 0.5 }}
+            >
               <img
                 src={perk.image}
                 className="perks_img_container"
@@ -87,7 +116,7 @@ const Perks = () => {
                 <p className="perks_title">{perk.title}</p>
                 <p className="perks_desc">{perk.description}</p>
               </div>
-            </div>
+            </motion.div>
           ))}
         </Slider>
       </div>

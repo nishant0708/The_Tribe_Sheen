@@ -4,22 +4,23 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-
-  background-color: #ff9bbd;
+  /* background-color: #ff9bbd; */
   margin: 0;
   padding: 0;
 }
 .Contact_us .Newsletter {
   width: 100%;
   display: flex;
+  z-index: 50;
 
   justify-content: center;
   align-items: center;
   padding-bottom: 60px;
-  background-color: #ff9bbd;
+  /* background-color: #ff9bbd; */
 }
 .Contact_us .Newsletter .news_content {
   max-width: 1300px;
+  z-index: 50;
 
   margin-top: 50px;
   border-radius: 28px;
@@ -81,7 +82,9 @@
 }
 .contact_main {
   width: 100%;
-  background-color: #ff9bbd;
+  z-index: 50;
+
+  /* background-color: #ff9bbd; */
   display: flex;
   flex-direction: column;
   justify-content: center;
