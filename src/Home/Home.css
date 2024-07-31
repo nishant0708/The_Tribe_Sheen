@@ -34,6 +34,11 @@
     display: block;
   }
 }
+@media (max-width:768px){
+  .newspaper-container{
+    display: none;
+  }
+}
 @media (max-width:500px){
   .floweroutline{
     width: 35%;

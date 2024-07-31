@@ -50,11 +50,17 @@ function Teams() {
           initial={{ opacity: 0, rotate: 0}}
           whileInView={{ opacity: 1, rotate: 360 }}
           transition={{ duration: 1.3 }}
+          viewport={{ once: true, amount: 0.5 }}
         />
     <div className="slider-container" id="teams">
       <h1 className="heading">Our Team</h1>
 
-      <div className="teams-carousel">
+      <motion.div className="teams-carousel"
+      initial={{ opacity: 0, y: 100 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      viewport={{ once: true, amount: 0.5 }}
+      >
         <Swiper
           modules={[Autoplay]}
           spaceBetween={50}
@@ -64,12 +70,7 @@ function Teams() {
         >
           {slides.map((slide, index) => (
             <SwiperSlide key={index}>
-              <motion.div className="slide" key={index}
-              initial={{ opacity: 0, y: 100 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              viewport={{ once: false, amount: 0.5 }}
-              >
+              <div className="slide" key={index}>
                 <div className="slide_card">
                   <div className="text_content">
                     <div className="headers">
@@ -82,11 +83,11 @@ function Teams() {
                     <img src={slide.image} alt="team-member" />
                   </div>
                 </div>
-              </motion.div>
+              </div>
             </SwiperSlide>
           ))}
         </Swiper>
-      </div>
+      </motion.div>
     </div>
     </div>
   )

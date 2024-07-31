@@ -29,6 +29,7 @@ export default function Updates() {
                 initial={{ opacity: 0, rotate: 0 }}
                 whileInView={{ opacity: 1, rotate: 360 }}
                 transition={{ duration: 1.5 }}
+                viewport={{ once: true, amount: 0.5 }}
             />
             <motion.img
                 src={PinkFlwrDown}
@@ -37,6 +38,7 @@ export default function Updates() {
                 initial={{ opacity: 0, rotate: 180 }}
                 whileInView={{ opacity: 1, rotate: 360 }}
                 transition={{ duration: 1 }}
+                viewport={{ once: true, amount: 0.5 }}
 
             />
 
@@ -44,7 +46,7 @@ export default function Updates() {
             initial={{ opacity: 0, y: 100 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            viewport={{ once: false, amount: 0.5 }}>
+            viewport={{ once: true, amount: 0.5 }}>
                 <Swiper
                     modules={[Navigation, Pagination, Autoplay]}
                     style={{

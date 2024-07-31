@@ -29,7 +29,7 @@ const About = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: false, amount: 0.5 }}
+          viewport={{ once: true, amount: 0.5 }}
           >
             Tribe Sheen is powered by <b>Word Dealers</b>, an All-Female
             Localization Firm renowned for its Prowess in Translation,

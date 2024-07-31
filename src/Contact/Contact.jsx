@@ -56,7 +56,7 @@ const Contact = () => {
         initial={{ opacity: 0}}
         whileInView={{ opacity: 1}}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        viewport={{ once: false, amount: 0.5 }}
+        viewport={{ once: true, amount: 0.5 }}
         >
           <h3>Stay updated with our latest news!</h3>
           <p>

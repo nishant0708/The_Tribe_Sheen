@@ -82,6 +82,7 @@ const Perks = () => {
           initial={{ opacity: 0, rotate: 0 }}
           whileInView={{ opacity: 1, rotate: 200 }}
           transition={{ duration: 1 }}
+          viewport={{ once: true, amount: 0.5 }}
         />
         <motion.img
           src={PinkFlwr}
@@ -90,6 +91,7 @@ const Perks = () => {
           initial={{ opacity: 0, rotate: 0 }}
           whileInView={{ opacity: 1, rotate: 180 }}
           transition={{ duration: 1 }}
+          viewport={{ once: true, amount: 0.5 }}
         />
 
 
@@ -100,10 +102,10 @@ const Perks = () => {
         <Slider {...settings} className="perks_slider">
           {perksData.map((perk, index) => (
             <motion.div key={index} className="perks_box"
-              initial={{ opacity: 0, y: 100 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1}}
               transition={{ duration: 0.5, ease: "easeOut" }}
-              viewport={{ once: false, amount: 0.5 }}
+              viewport={{ once: true, amount: 0.5 }}
             >
               <img
                 src={perk.image}

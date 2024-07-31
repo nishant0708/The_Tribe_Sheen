@@ -34,6 +34,7 @@ const Home = () => {
         initial={{ opacity: 0, rotate: 0 }}
         whileInView={{ opacity: 1, rotate: 180 }}
         transition={{ duration: 1.5 }}
+        viewport={{ once: true, amount: 0.5 }}
       />
     </div>
   )
