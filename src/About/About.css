@@ -29,7 +29,6 @@
 .About_us h2 {
   font-size: 68px;
   margin: 0;
-
 }
 .About_us p {
   text-align: center;
@@ -39,6 +38,16 @@
 
   margin: 0;
   padding: 20px 50px;
+}
+@media (max-width: 1024px) {
+  .About_us p {
+    font-size: 20px;
+  }
+}
+@media (max-width: 900px) {
+  .about_content {
+    margin-top: 30px;
+  }
 }
 @media (max-width: 768px) {
   .About_us h2 {
