@@ -3,10 +3,11 @@ import { motion } from 'framer-motion'
 import './Dashboard.css'
 import image from '../assets/women.png'
 import logo from '../assets/Untitled design (1).png'
+import { useNavigate } from 'react-router-dom'
 
 export const Dashboard = () => {
   const [contentHeight, setContentHeight] = useState(window.innerHeight * 0.6) // Default height
-
+  const navigate = useNavigate()
   useEffect(() => {
     const handleResize = () => {
       // Update content height based on window width
@@ -53,7 +54,12 @@ export const Dashboard = () => {
               Personality Development, and Fashion Flair.
             </p>
           </div>
-          <div className="register__button">
+          <div
+            className="register__button"
+            onClick={() => {
+              navigate('/register')
+            }}
+          >
             <p>Register</p>
           </div>
         </motion.div>
