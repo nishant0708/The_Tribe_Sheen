@@ -177,6 +177,7 @@ const Register = () => {
       'email',
       'height',
       'weight',
+      'category',
       'country',
       'state',
       'city',
@@ -388,9 +389,9 @@ const Register = () => {
                 className="form-select smaller-space"
                 required
               >
-                {/* <option value="">Category</option> */}
+                <option value="">Category</option>
                 <option value="Mrs">Mrs</option>
-                <option value="Mr">Mr</option>
+                <option value="Miss">Miss</option>
               </select>
 
               <input
@@ -739,7 +740,7 @@ const Register = () => {
             className="submit-button"
             disabled={isSubmitting}
           >
-            {isSubmitting ? 'Submiting...' : 'Submit'}
+            {isSubmitting ? 'submitting...' : 'Submit'}
           </button>
         </form>
       </div>
