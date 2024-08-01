@@ -31,6 +31,7 @@
 
 .updateimg{
     width: 50vw;
+    aspect-ratio: 3/2;
     max-width: 1300px;
     border-radius: 4rem;
     position: relative;

@@ -5,12 +5,13 @@ import 'swiper/css';
 import './updates.css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import UpdateImage from '../assets/updates.png';
 import PinkFlwr from '../assets/flowoutline.png';
 import PinkFlwrDown from '../assets/pinkflwr.png';
 import { motion } from 'framer-motion'
 
-const updates = [UpdateImage, UpdateImage, UpdateImage, UpdateImage];
+import Update1 from '../assets/update1.png'
+
+const updates = [Update1];
 
 
 export default function Updates() {
