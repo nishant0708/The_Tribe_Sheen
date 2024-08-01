@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { IoSend } from 'react-icons/io5'
+import { AiOutlineSend } from "react-icons/ai";
 import { FaLocationDot } from 'react-icons/fa6'
 import { IoIosMail } from 'react-icons/io'
 import { IoCall } from 'react-icons/io5'
@@ -72,7 +72,7 @@ const Contact = () => {
               onChange={handleEmailChange}
             />
             <button onClick={handleSubmit}>
-              <IoSend />
+            <AiOutlineSend />
             </button>
           </div>
         </motion.div>

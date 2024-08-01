@@ -48,6 +48,9 @@
     max-width: 100%;
     height: auto;
   }
+  .sponsor-heading{
+    font-size: 68px;
+  }
   
   /* Media Queries */
   @media (max-width: 1024px) {
@@ -89,7 +92,12 @@
     .sponsor-image {
       width: 120px;
     }
+    .sponsor-heading{
+      font-size: 36px;
+    }
   }
+
+ 
   
   @media (max-width: 500px) {
     .sponsors-page {

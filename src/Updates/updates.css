@@ -23,7 +23,7 @@
     font-weight: 800;
     text-align: center;
     color: white;
-    font-size: 2.5rem;
+    font-size: 68px;
 }
 .carousel{
     width: 100vw;
@@ -73,6 +73,9 @@
     }
     .imgcontainer{
         width: 100vw;
+    }
+    .updatetitle{
+        font-size: 36px;
     }
     .swiper-button-next,
 .swiper-button-prev {
