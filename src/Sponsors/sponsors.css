@@ -48,7 +48,7 @@
     max-width: 100%;
     height: auto;
   }
-  h1{
+  .sponsor-heading{
     font-size: 68px;
   }
   
@@ -92,7 +92,7 @@
     .sponsor-image {
       width: 120px;
     }
-    h1{
+    .sponsor-heading{
       font-size: 36px;
     }
   }
