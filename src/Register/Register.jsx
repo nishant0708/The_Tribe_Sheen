@@ -7,7 +7,7 @@ import { ref as storageRefer } from 'firebase/storage'
 import { uploadBytes, getDownloadURL } from 'firebase/storage'
 import './register.css'
 import QR from '../assets/qr.jpg'
-import { ref, set } from 'firebase/database'
+import { ref, set, get } from 'firebase/database'
 import { toast } from 'react-toastify'
 import emailjs from 'emailjs-com'
 const Register = () => {
@@ -198,6 +198,28 @@ const Register = () => {
       }
     }
 
+    const photoFields = ['frontFacing', 'leftProfile', 'rightProfile']
+    for (let i = 0; i < photoFields.length; i++) {
+      const field = photoFields[i]
+      if (!formData.photos[field]) {
+        alert(
+          `Please upload a photo for ${field.replace(/([A-Z])/g, ' $1').toLowerCase()}`,
+        )
+        hasErrors = true
+        break
+      }
+    }
+
+    if (!formData.idProof) {
+      alert('Please upload an ID proof')
+      hasErrors = true
+    }
+
+    if (!formData.payment) {
+      alert('Please upload a payment proof')
+      hasErrors = true
+    }
+
     if (!validatePhoneNumber(formData.contactNumber)) {
       toast.error('Please enter a valid 10-digit phone number')
       hasErrors = true
@@ -208,10 +230,22 @@ const Register = () => {
       return
     }
 
-    const fullName = formData.name.replace(/\s+/g, '-').toLowerCase()
-    const userId = generateUUID()
-
     try {
+      const snapshot = await get(ref(database, 'Registrant'))
+      const registrants = snapshot.val()
+      const emailExists = Object.values(registrants || {}).some(
+        (registrant) => registrant.details.email === formData.email,
+      )
+
+      if (emailExists) {
+        alert('Email already in use . Please use Different Email')
+        setIsSubmitting(false)
+        return
+      }
+
+      const fullName = formData.name.replace(/\s+/g, '-').toLowerCase()
+      const userId = generateUUID()
+
       // Save form data to Firebase Realtime Database
       await set(
         ref(database, `Registrant/${fullName}-${userId}/details`),
@@ -267,7 +301,7 @@ const Register = () => {
         'pxwCwubANMKDGb28R',
       )
 
-      alert('registration Successfull')
+      alert('Registration successful')
       window.location.reload()
     } catch (error) {
       toast.error('Error saving data, please try again.')
@@ -467,7 +501,7 @@ const Register = () => {
                 value={formData.height}
                 onChange={handleInputChange}
                 className="form-input"
-                placeholder="Height in cm"
+                placeholder="Height in ft"
                 required
               />
             </div>
