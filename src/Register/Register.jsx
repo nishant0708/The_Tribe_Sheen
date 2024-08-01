@@ -261,10 +261,10 @@ const Register = () => {
       }
 
       await emailjs.send(
-        'service_byf4wzn',
-        'template_kyai4ri',
+        'service_b4x5mm9',
+        'template_nb89wtt',
         emailParams,
-        'ERXxIWNDUgZtO4K2P',
+        'pxwCwubANMKDGb28R',
       )
 
       alert('registration Successfull')
