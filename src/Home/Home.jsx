@@ -17,7 +17,7 @@ import { Dashboard } from '../Dashboard/Dashboard'
 
 const Home = () => {
   return (
-    <div className="home">
+    <div className="home" id='home'>
       <Loader />
       <Navbar />
       <Dashboard />

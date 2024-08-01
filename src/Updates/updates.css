@@ -23,16 +23,17 @@
     font-weight: 800;
     text-align: center;
     color: white;
-    font-size: 2.5rem;
+    font-size: 68px;
 }
 .carousel{
     width: 100vw;
 }
 
 .updateimg{
-    width: 50vw;
+    width: 30vw;
+    aspect-ratio: 1/1;
     max-width: 1300px;
-    border-radius: 4rem;
+    border-radius: 2.5rem;
     position: relative;
     left: 50%;
     transform: translateX(-50%);
@@ -72,6 +73,9 @@
     }
     .imgcontainer{
         width: 100vw;
+    }
+    .updatetitle{
+        font-size: 36px;
     }
     .swiper-button-next,
 .swiper-button-prev {

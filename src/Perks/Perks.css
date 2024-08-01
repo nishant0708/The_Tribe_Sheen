@@ -154,6 +154,7 @@
 @media screen and (max-width: 500px) {
   .perks_main {
     margin-top: 80px;
+    padding: 0;
   }
   .perks_slider .slick-slide {
     height: 350px;
