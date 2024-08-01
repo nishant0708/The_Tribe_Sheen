@@ -61,7 +61,7 @@ function Teams() {
           initial={{ opacity: 0, rotate: 0}}
           whileInView={{ opacity: 1, rotate: 360 }}
           transition={{ duration: 1.3 }}
-          viewport={{ once: true, amount: 0.5 }}
+          viewport={{ once: true, amount: 0.2 }}
         />
     <div className="slider-container" id="teams">
       <h1 className="heading">Our Team</h1>

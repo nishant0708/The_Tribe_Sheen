@@ -6,28 +6,25 @@ import logo from '../assets/Untitled design (1).png'
 import { useNavigate } from 'react-router-dom'
 
 export const Dashboard = () => {
-  const [contentHeight, setContentHeight] = useState(window.innerHeight * 0.6) // Default height
+  const [contentHeight, setContentHeight] = useState(window.innerHeight * 0.6)
   const navigate = useNavigate()
+
   useEffect(() => {
     const handleResize = () => {
-      // Update content height based on window width
       if (window.innerWidth < 480) {
-        setContentHeight(window.innerHeight * 0.7) // Example for very small screens
+        setContentHeight(window.innerHeight * 0.7)
       } else if (window.innerWidth < 1100) {
-        setContentHeight(window.innerHeight * 0.7) // Example for medium screens
+        setContentHeight(window.innerHeight * 0.7)
       } else if (window.innerWidth < 1200) {
-        setContentHeight(window.innerHeight * 0.8) // Example for medium screens
+        setContentHeight(window.innerHeight * 0.8)
       } else {
-        setContentHeight(window.innerHeight * 1) // Default for larger screens
+        setContentHeight(window.innerHeight * 1)
       }
     }
 
     window.addEventListener('resize', handleResize)
-
-    // Initial call to set height based on current window size
     handleResize()
 
-    // Cleanup the event listener on component unmount
     return () => window.removeEventListener('resize', handleResize)
   }, [])
 
@@ -42,32 +39,49 @@ export const Dashboard = () => {
           className="mainpage__topbar"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.5, delay: 4.2 }}
         >
           <div className="mainpage__topbar__logo">
             <img src={logo} alt="logo" />
           </div>
-          <div className="mainpage__topbar__subheader">
+          <motion.div 
+            className="mainpage__topbar__subheader"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
             <p>
               Unleashing the Beauty Within: Tribe Sheen celebrates the Grace and
               Elegance of Miss and Mrs. contestants with Expert Grooming,
               Personality Development, and Fashion Flair.
             </p>
-          </div>
-          <div
+          </motion.div>
+          <motion.div
             className="register__button"
             onClick={() => {
               navigate('/register')
             }}
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.3 }}
+            whileHover={{ scale: 1.05 }}
           >
             <p>Register</p>
-          </div>
+          </motion.div>
         </motion.div>
         <div className="mainpage__coverpic"></div>
       </div>
-      <div className="mainpage__pinkspacer">
-        <img src={image} alt="coverpic2" />
-      </div>
+      <motion.div className="mainpage__pinkspacer"
+      initial={{ opacity: 0, y: 0 }}
+      animate={{ opacity: 1, y: -50 }}
+      transition={{ duration: 1, delay: 4.8 }}
+      >
+        <img 
+          src={image} 
+          alt="coverpic2"
+          
+        />
+      </motion.div>
     </div>
   )
 }
