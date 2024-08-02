@@ -10,7 +10,8 @@ import 'swiper/css'
 import Vinita from '../assets/vinita.png'
 import Yogita from '../assets/yogita.png'
 import Vrinda from '../assets/vrinda.png'
-
+import Saanwari from '../assets/saanwari.png'
+import Nidhi from '../assets/nidhi.png'
 
 const slides = [
   {
@@ -25,14 +26,14 @@ const slides = [
     position: 'Project Head',
     description:
       "As the CEO of Word Dealers Pvt. Ltd., the World's First All-Female Localization Company, she leads an innovative team dedicated to Empowering Women through Translation, Lingual Escorting, and Simultaneous Interpretation. With a creative flair for Fashion Designing, Jewellery Creation, Art, and Content Development, she showcases a Diverse Artistic Ability that sets her apart in the industry. Additionally, she is a Trained Classical Singer with over Seven years of experience and a Skilled Dancer. Her strong Communication and Public Speaking skills have earned her significant achievements, including being a Dignitary at Columbia University alongside Ms. Evelin Lindner, a three-time Nobel Peace Prize nominee, participating in the Generation Equality Forum in Paris (2021), and Competing in Regional-Level Debate Competitions.",
-    image: Vinita,
+    image: Saanwari,
   },
   {
     name: 'Nidhi Hasija',
     position: 'Image Consultant',
     description:
       "Nidhi Hasija* is a seasoned writer, trainer, and educator with over 18 years of experience inspiring and empowering individuals. With a keen eye for potential and a compassionate ear, she has guided countless students and professionals to achieve their goals. She has also participated as a presenter in Cambridge University, London. The author of the 'Luminaries' book series, Nidhi shares her passion for learning and growth. Her extensive experience, encompassing prestigious institutions like Progressive Education, DPS, Amity, IIPM, and corporate training for ICAI, ICSI, Scientech, and Wittyfeed, positions her as a leading expert in her field. Dedicated to igniting the spark within others, she empowers individuals to realize their full potential.",
-    image: Vinita,
+    image: Nidhi,
   },
   {
     name: 'Yogita Thakur',
@@ -61,7 +62,7 @@ function Teams() {
           initial={{ opacity: 0, rotate: 0}}
           whileInView={{ opacity: 1, rotate: 360 }}
           transition={{ duration: 1.3 }}
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: true, amount: 0.5 }}
         />
     <div className="slider-container" id="teams">
       <h1 className="heading">Our Team</h1>
@@ -70,7 +71,7 @@ function Teams() {
       initial={{ opacity: 0, y: 100 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      viewport={{ once: true, amount: 0.5 }}
+      viewport={{ once: true, amount: 0.3 }}
       >
         <Swiper
           modules={[Autoplay]}
