@@ -5,7 +5,7 @@ import 'swiper/css';
 import './updates.css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import PinkFlwr from '../assets/flowoutline.png';
+import YellowFlwr from '../assets/flowoutline.png';
 import PinkFlwrDown from '../assets/pinkflwr.png';
 import { motion } from 'framer-motion'
 
@@ -24,11 +24,11 @@ export default function Updates() {
                 Updates
             </h1>
             <motion.img
-                src={PinkFlwr}
-                alt="Pink Flower"
+                src={YellowFlwr}
+                alt="Yellow Flower"
                 className='yellowflwr'
-                initial={{ opacity: 0, rotate: 0 }}
-                whileInView={{ opacity: 1, rotate: 360 }}
+                initial={{ opacity: 0, rotate: 270 }}
+                whileInView={{ opacity: 1, rotate: 0 }}
                 transition={{ duration: 1.5 }}
                 viewport={{ once: true, amount: 0.5 }}
             />
