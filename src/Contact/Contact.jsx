@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { IoSend } from 'react-icons/io5'
+import { AiOutlineSend } from 'react-icons/ai'
 import { FaLocationDot } from 'react-icons/fa6'
 import { IoIosMail } from 'react-icons/io'
 import { IoCall } from 'react-icons/io5'
@@ -7,6 +7,7 @@ import { ref, set } from 'firebase/database'
 import { database } from '../firebaseConfig'
 import './Contact.css'
 import { motion } from 'framer-motion'
+
 // UUID generation function
 function generateUUID() {
   var d = new Date().getTime()
@@ -37,6 +38,11 @@ const Contact = () => {
   }
 
   const handleSubmit = () => {
+    if (email.trim() === '') {
+      alert('Please enter a valid email address.')
+      return
+    }
+
     const uniqueId = generateUUID()
     const emailRef = ref(database, `Newsletter/${uniqueId}`)
     set(emailRef, email)
@@ -52,11 +58,12 @@ const Contact = () => {
   return (
     <div className="Contact_us" id="contact">
       <div className="Newsletter">
-        <motion.div className="news_content"
-        initial={{ opacity: 0}}
-        whileInView={{ opacity: 1}}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        viewport={{ once: true, amount: 0.5 }}
+        <motion.div
+          className="news_content"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+          viewport={{ once: true, amount: 0.5 }}
         >
           <h3>Stay updated with our latest news!</h3>
           <p>
@@ -65,14 +72,14 @@ const Contact = () => {
           </p>
           <div className="email">
             <input
-              type="text"
+              type="email"
               id="email"
               placeholder="Enter your email address"
               value={email}
               onChange={handleEmailChange}
             />
             <button onClick={handleSubmit}>
-              <IoSend />
+              <AiOutlineSend />
             </button>
           </div>
         </motion.div>
@@ -100,7 +107,7 @@ const Contact = () => {
                 <div>
                   <IoCall />
                 </div>
-                +91 78158683456
+                +91 9399425972
               </li>
             </ul>
           </div>

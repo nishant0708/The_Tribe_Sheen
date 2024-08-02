@@ -148,6 +148,14 @@
   font-size: 20px;
 }
 
+.icons li div {
+  min-width: 35px; 
+  min-height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .Contact_us .modal {
   display: flex;
   justify-content: center;
