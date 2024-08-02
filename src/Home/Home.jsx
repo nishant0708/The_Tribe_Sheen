@@ -35,9 +35,9 @@ const Home = () => {
         src={Flower}
         alt="Flower"
         className='floweroutline'
-        initial={{ opacity: 0, rotate: 0 }}
-        whileInView={{ opacity: 1, rotate: 180 }}
-        transition={{ duration: 1.5 }}
+        initial={{ opacity: 0, rotate: 180 }}
+        whileInView={{ opacity: 1, rotate: 0 }}
+        transition={{ duration: 1 }}
         viewport={{ once: true, amount: 0.5 }}
       />
     </div>

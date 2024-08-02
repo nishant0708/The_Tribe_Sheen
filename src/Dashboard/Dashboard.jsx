@@ -39,7 +39,7 @@ export const Dashboard = () => {
           className="mainpage__topbar"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 4.8 }}
+          transition={{ duration: 0.5, delay: 4.3 }}
         >
           <div className="mainpage__topbar__logo">
             <img src={logo} alt="logo" />
@@ -56,25 +56,21 @@ export const Dashboard = () => {
               Personality Development, and Fashion Flair.
             </p>
           </motion.div>
-          <motion.div
+          <div
             className="register__button"
             onClick={() => {
               navigate('/register')
             }}
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.3 }}
-            whileHover={{ scale: 1.05 }}
           >
             <p>Register</p>
-          </motion.div>
+          </div>
         </motion.div>
         <div className="mainpage__coverpic"></div>
       </div>
       <motion.div className="mainpage__pinkspacer"
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1, delay: 4.2 }}
+      transition={{ duration: 1, delay: 3.8 }}
       >
         <img 
           src={image} 
