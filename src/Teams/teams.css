@@ -1,4 +1,4 @@
-.ourteams{
+.ourteams {
   position: relative;
 }
 .slider-container {
@@ -11,7 +11,7 @@
   /* overflow-x: hidden; */
   position: relative;
 }
-.pinkoutline{
+.pinkoutline {
   position: absolute;
   width: 15%;
   right: 02rem;
@@ -219,9 +219,9 @@
 }
 
 @media (max-width: 768px) {
- .heading{
-  font-size: 36px;
- }
+  .heading {
+    font-size: 36px;
+  }
 }
 
 @media (max-width: 500px) {
@@ -231,6 +231,7 @@
   .image img {
     height: 250px;
     aspect-ratio: 1/1;
+    object-fit: contain;
     width: 250px;
     display: flex;
     align-items: center;
@@ -243,12 +244,13 @@
     margin-top: 7rem;
     width: 100%;
   }
-  .pinkoutline{
+  .pinkoutline {
     width: 28%;
     right: 1.5rem;
     top: 8rem;
   }
-  .headers h1, .headers h3{
+  .headers h1,
+  .headers h3 {
     text-align: center;
     font-size: 20px;
   }

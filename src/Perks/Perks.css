@@ -42,7 +42,7 @@
   display: flex !important;
   justify-content: center;
   align-items: center;
-  height: 75vh; /* Increase height of slider track */
+  height: 89vh; /* Increase height of slider track */
 }
 
 .perks_slider .slick-center {
@@ -93,7 +93,7 @@
 /* Media query for screen width 1080px */
 @media screen and (max-width: 1080px) {
   .perks_slider .slick-slide {
-    height: 55vh;
+    height: 65vh;
   }
   .perks_slider .slick-slide {
     transform: scale(0.5) translateY(-120px);
@@ -112,7 +112,7 @@
     bottom: 3rem;
     right: 3rem;
     width: 18%;
-}
+  }
 }
 @media screen and (max-width: 900px) {
   .perks_main {

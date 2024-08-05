@@ -1,6 +1,6 @@
 import React from 'react'
 import './teams.css' // Make sure the path is correct
-import PinkFlwr from '../assets/pinkoutlineflower.png';
+import PinkFlwr from '../assets/pinkoutlineflower.png'
 import { motion } from 'framer-motion'
 
 import { Swiper, SwiperSlide } from 'swiper/react'
@@ -46,61 +46,60 @@ const slides = [
     name: 'Vrinda Meena',
     position: 'Senior Makeover Consultant',
     description:
-      "Vrinda Meena, a highly skilled makeup artist, has been crafting stunning looks for over 12 years. Her expertise extends beyond makeup to encompass hair and skin care, making her a well-rounded beauty expert. Recognized for her exceptional talent, Vrinda has been honored with prestigious awards including the Talent Award, Best Makeup Artist Award, Educator Award, and Achievement Award. Her work has garnered admiration from renowned celebrities such as Raveena Tandon, Bhagyashree, Sneha Ullal, and Ishani Koppikar, solidifying her position as a leading figure in the beauty industry.",
+      'Vrinda Meena, a highly skilled makeup artist, has been crafting stunning looks for over 12 years. Her expertise extends beyond makeup to encompass hair and skin care, making her a well-rounded beauty expert. Recognized for her exceptional talent, Vrinda has been honored with prestigious awards including the Talent Award, Best Makeup Artist Award, Educator Award, and Achievement Award. Her work has garnered admiration from renowned celebrities such as Raveena Tandon, Bhagyashree, Sneha Ullal, and Ishani Koppikar, solidifying her position as a leading figure in the beauty industry.',
     image: Vrinda,
   },
 ]
 function Teams() {
-  
-
   return (
-    <div className='ourteams'>
+    <div className="ourteams">
       <motion.img
-          src={PinkFlwr}
-          alt="Pink Flower"
-          className='pinkoutline'
-          initial={{ opacity: 0, rotate: 0}}
-          whileInView={{ opacity: 1, rotate: 360 }}
-          transition={{ duration: 1.3 }}
-          viewport={{ once: true, amount: 0.5 }}
-        />
-    <div className="slider-container" id="teams">
-      <h1 className="heading">Our Team</h1>
+        src={PinkFlwr}
+        alt="Pink Flower"
+        className="pinkoutline"
+        initial={{ opacity: 0, rotate: 0 }}
+        whileInView={{ opacity: 1, rotate: 360 }}
+        transition={{ duration: 1.3 }}
+        viewport={{ once: true, amount: 0.5 }}
+      />
+      <div className="slider-container" id="teams">
+        <h1 className="heading">Our Team</h1>
 
-      <motion.div className="teams-carousel"
-      initial={{ opacity: 0, y: 100 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
-      viewport={{ once: true, amount: 0.3 }}
-      >
-        <Swiper
-          modules={[Autoplay]}
-          spaceBetween={50}
-          slidesPerView={1}
-          loop={true}
-          autoplay={{ delay: 3500 }}
+        <motion.div
+          className="teams-carousel"
+          initial={{ opacity: 0, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+          viewport={{ once: true, amount: 0.3 }}
         >
-          {slides.map((slide, index) => (
-            <SwiperSlide key={index}>
-              <div className="slide" key={index}>
-                <div className="slide_card">
-                  <div className="text_content">
-                    <div className="headers">
-                      <h1>{slide.name}</h1>
-                      <h3>{slide.position}</h3>
+          <Swiper
+            modules={[Autoplay]}
+            spaceBetween={50}
+            slidesPerView={1}
+            loop={true}
+            autoplay={false}
+          >
+            {slides.map((slide, index) => (
+              <SwiperSlide key={index}>
+                <div className="slide" key={index}>
+                  <div className="slide_card">
+                    <div className="text_content">
+                      <div className="headers">
+                        <h1>{slide.name}</h1>
+                        <h3>{slide.position}</h3>
+                      </div>
+                      <p>{slide.description}</p>
                     </div>
-                    <p>{slide.description}</p>
-                  </div>
-                  <div className="image">
-                    <img src={slide.image} alt="team-member" />
+                    <div className="image">
+                      <img src={slide.image} alt="team-member" />
+                    </div>
                   </div>
                 </div>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </motion.div>
-    </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </motion.div>
+      </div>
     </div>
   )
 }
