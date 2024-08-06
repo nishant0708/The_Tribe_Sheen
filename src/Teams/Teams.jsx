@@ -12,6 +12,7 @@ import Yogita from '../assets/yogita.png'
 import Vrinda from '../assets/vrinda.png'
 import Saanwari from '../assets/saanwari.png'
 import Nidhi from '../assets/nidhi.png'
+import Bhavana from '../assets/bhavana.png'
 
 const slides = [
   {
@@ -48,6 +49,13 @@ const slides = [
     description:
       'Vrinda Meena, a highly skilled makeup artist, has been crafting stunning looks for over 12 years. Her expertise extends beyond makeup to encompass hair and skin care, making her a well-rounded beauty expert. Recognized for her exceptional talent, Vrinda has been honored with prestigious awards including the Talent Award, Best Makeup Artist Award, Educator Award, and Achievement Award. Her work has garnered admiration from renowned celebrities such as Raveena Tandon, Bhagyashree, Sneha Ullal, and Ishani Koppikar, solidifying her position as a leading figure in the beauty industry.',
     image: Vrinda,
+  },
+  {
+    name: 'Bhavana Savdekar',
+    position: 'CRM',
+    description:
+      'Bhavana with a B.Com in Sales from Radiant Institute of Management and Science, she brings valuable experience as a Language Coordinator - Domestic at Word Dealers. Her expertise in communication and coordination has prepared her for her new role as a CRM at Tribe Sheen, where she will continue to excel and contribute to customer relationship management.',
+    image: Bhavana,
   },
 ]
 function Teams() {

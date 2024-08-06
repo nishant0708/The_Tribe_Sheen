@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './navbar.css';
 import { GiHamburgerMenu } from "react-icons/gi";
 import { RxCross1 } from "react-icons/rx";
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -40,6 +41,7 @@ const Navbar = () => {
           <li><a onClick={() => scrollToSection('perks')}>Perks</a></li>
           <li><a onClick={() => scrollToSection('updates')}>Updates</a></li>
           <li><a onClick={() => scrollToSection('contact')}>Contact us</a></li>
+          <li> <Link to='/register'> <b> Register </b> </Link> </li>
         </ul>
       </nav>
     </div>
