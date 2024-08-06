@@ -75,6 +75,7 @@
     left: 50%;
     transform: translate(-50%, -50%) !important;
   }
+  
 }
 @media (max-width: 500px) {
   .mainpage__topbar__logo img {
@@ -82,6 +83,10 @@
   }
   .mainpage__topbar__subheader {
     width: 300px !important;
+  }
+  .register__button p{
+    padding: 0.5rem 1rem;
+    font-size: 1.5rem;
   }
 }
 
@@ -116,8 +121,6 @@
 }
 
 .register__button {
-  width: fit-content;
-  height: fit-content;
   background-color: #bc1522;
   border: none;
   border-radius: 10px;
@@ -127,11 +130,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0.1vh 5.5vw;
 
   p {
-    font-size: 2vh;
+    font-size: 1rem;
     color: white;
+  padding: 0.5rem 2rem;
+
   }
 }
 
