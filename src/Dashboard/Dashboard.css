@@ -10,7 +10,9 @@
   padding-top: 2vh;
   overflow: hidden;
 }
-
+.register__button p {
+  font-weight: 600;
+}
 .mainpage__content {
   width: 100%;
   max-width: 1300px;
@@ -75,7 +77,6 @@
     left: 50%;
     transform: translate(-50%, -50%) !important;
   }
-  
 }
 @media (max-width: 500px) {
   .mainpage__topbar__logo img {
@@ -84,7 +85,7 @@
   .mainpage__topbar__subheader {
     width: 300px !important;
   }
-  .register__button p{
+  .register__button p {
     padding: 0.5rem 1rem;
     font-size: 1.5rem;
   }
@@ -134,8 +135,7 @@
   p {
     font-size: 1rem;
     color: white;
-  padding: 0.5rem 2rem;
-
+    padding: 0.5rem 2rem;
   }
 }
 

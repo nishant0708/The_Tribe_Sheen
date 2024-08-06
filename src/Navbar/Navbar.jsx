@@ -1,30 +1,31 @@
-import React, { useState } from 'react';
-import './navbar.css';
-import { GiHamburgerMenu } from "react-icons/gi";
-import { RxCross1 } from "react-icons/rx";
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react'
+import './navbar.css'
+import { GiHamburgerMenu } from 'react-icons/gi'
+import { RxCross1 } from 'react-icons/rx'
+import { Link } from 'react-router-dom'
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false)
 
   const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
+    setIsOpen(!isOpen)
+  }
 
   const scrollToSection = (sectionId) => {
-    const section = document.getElementById(sectionId);
+    const section = document.getElementById(sectionId)
     if (section) {
-      const navbarHeight = document.querySelector('.navbar_main').offsetHeight;
-      const sectionTop = section.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
-      
+      const navbarHeight = document.querySelector('.navbar_main').offsetHeight
+      const sectionTop =
+        section.getBoundingClientRect().top + window.pageYOffset - navbarHeight
+
       window.scrollTo({
         top: sectionTop,
-        behavior: 'smooth'
-      });
-      
-      setIsOpen(false); // Close the menu after clicking a link
+        behavior: 'smooth',
+      })
+
+      setIsOpen(false) // Close the menu after clicking a link
     }
-  };
+  }
 
   return (
     <div className="navbar_main">
@@ -35,17 +36,37 @@ const Navbar = () => {
           </div>
         </div>
         <ul className={`navbar-links ${isOpen ? 'active' : ''}`}>
-          <li><a onClick={() => scrollToSection('home')}>Home</a></li>
-          <li><a onClick={() => scrollToSection('about')}>About us</a></li>
-          <li><a onClick={() => scrollToSection('teams')}>Teams</a></li>
-          <li><a onClick={() => scrollToSection('perks')}>Perks</a></li>
-          <li><a onClick={() => scrollToSection('updates')}>Updates</a></li>
-          <li><a onClick={() => scrollToSection('contact')}>Contact us</a></li>
-          <li> <Link to='/register'> <b> Register </b> </Link> </li>
+          <li>
+            <a onClick={() => scrollToSection('home')}>Home</a>
+          </li>
+          <li>
+            <a onClick={() => scrollToSection('about')}>About us</a>
+          </li>
+          <li>
+            <a onClick={() => scrollToSection('teams')}>Teams</a>
+          </li>
+          <li>
+            <a onClick={() => scrollToSection('perks')}>Perks</a>
+          </li>
+          <li>
+            <a onClick={() => scrollToSection('updates')}>Updates</a>
+          </li>
+          <li>
+            <a onClick={() => scrollToSection('contact')}>Contact us</a>
+          </li>
+          <li className="button-animation">
+            <Link to="/register">
+              Register
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </Link>
+          </li>
         </ul>
       </nav>
     </div>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar
