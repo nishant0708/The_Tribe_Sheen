@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import './teams.css' // Make sure the path is correct
 import PinkFlwr from '../assets/pinkoutlineflower.png'
 import { motion } from 'framer-motion'
 
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Autoplay } from 'swiper/modules'
+import { Autoplay, Navigation, Pagination } from 'swiper/modules'
 import 'swiper/css'
 
 import Vinita from '../assets/vinita.png'
@@ -59,6 +59,8 @@ const slides = [
   },
 ]
 function Teams() {
+  const prevRef = useRef(null);
+    const nextRef = useRef(null);
   return (
     <div className="ourteams">
       <motion.img
@@ -81,9 +83,15 @@ function Teams() {
           viewport={{ once: true, amount: 0.3 }}
         >
           <Swiper
-            modules={[Autoplay]}
+          modules={[Navigation, Pagination, Autoplay]}
+          style={{
+            "--swiper-navigation-color": "#ff9bbd",
+            "--swiper-navigation-size": "8px",
+        }}
             spaceBetween={50}
             slidesPerView={1}
+            navigation
+                    pagination={{ clickable: true }}
             loop={true}
             autoplay={false}
           >
@@ -106,6 +114,10 @@ function Teams() {
               </SwiperSlide>
             ))}
           </Swiper>
+          <div className="custom-navigation">
+                    <button ref={prevRef} className="nav-button prev">&lt;</button>
+                    <button ref={nextRef} className="nav-button next">&gt;</button>
+                </div>
         </motion.div>
       </div>
     </div>

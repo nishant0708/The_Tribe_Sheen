@@ -11,7 +11,7 @@ import { motion } from 'framer-motion'
 
 import Update1 from '../assets/update1.png'
 
-const updates = [Update1];
+const updates = [Update1, Update1, Update1];
 
 
 export default function Updates() {
