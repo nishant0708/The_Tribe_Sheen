@@ -2,7 +2,7 @@
   position: relative;
 }
 .slider-container {
-  width: 80%;
+  width: 100%;
   max-width: 1300px;
   margin: 0 auto;
   border-radius: 10px;
@@ -56,7 +56,10 @@
   width: max-content;
   font-size: 1rem;
 }
-
+.teams-carousel{
+  width: 80%;
+  margin: auto;
+}
 .headers h1 {
   padding: 0;
   margin: 0;
@@ -222,6 +225,18 @@
   .heading {
     font-size: 36px;
   }
+  .swiper{
+    overflow: visible !important ;
+  }
+  .swiper-button-next{
+    right: -25px;
+    margin: 0rem;
+
+  }
+.swiper-button-prev {
+    margin: 0rem;
+    left: -25px;
+}
 }
 
 @media (max-width: 500px) {
