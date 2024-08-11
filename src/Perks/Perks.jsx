@@ -4,6 +4,7 @@ import './Perks.css'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import perks2 from '../assets/perks2.svg'
+import perks3 from '../assets/perk3.svg'
 import media from '../assets/perk_media().svg'
 import ramp from '../assets/perk_ramp().svg'
 import Apparel from '../assets/perk_apparel().svg'
@@ -11,7 +12,7 @@ import perks from '../assets/perks.svg'
 import photo from '../assets/perk_photo().svg'
 import personality from '../assets/perk_personality().svg'
 import YellowFlwr from '../assets/yellowflwr.png'
-import PinkFlwr from '../assets/pinkflwr.png';
+import PinkFlwr from '../assets/pinkflwr.png'
 import { motion } from 'framer-motion'
 
 // Sample data array
@@ -29,7 +30,7 @@ const perksData = [
       'Elevate your style with personalized guidance on selecting the perfect wardrobe that complements your unique personality. Learn how to make impactful fashion choices for any occasion.',
   },
   {
-    image: perks2,
+    image: perks3,
     title: ' Yoga and Fitness Workshop',
     description:
       'Achieve balance and well-being through our yoga and fitness workshops designed to enhance both physical and mental strength. These sessions will help you maintain a healthy lifestyle and radiant energy.',
@@ -89,12 +90,12 @@ const Perks = () => {
   }
 
   return (
-    <div className="perks_main" id='perks'>
+    <div className="perks_main" id="perks">
       <div className="perks_content">
         <motion.img
           src={YellowFlwr}
           alt="Yellow Flower"
-          className='yellowflwrp'
+          className="yellowflwrp"
           initial={{ opacity: 0, rotate: 0 }}
           whileInView={{ opacity: 1, rotate: 200 }}
           transition={{ duration: 1 }}
@@ -103,13 +104,12 @@ const Perks = () => {
         <motion.img
           src={PinkFlwr}
           alt="Pink Flower"
-          className='pinkflwrp'
+          className="pinkflwrp"
           initial={{ opacity: 0, rotate: 180 }}
           whileInView={{ opacity: 1, rotate: 0 }}
           transition={{ duration: 1 }}
           viewport={{ once: true, amount: 0.5 }}
         />
-
 
         {/* </div> */}
         <div className="perks_Heading">
@@ -117,10 +117,12 @@ const Perks = () => {
         </div>
         <Slider {...settings} className="perks_slider">
           {perksData.map((perk, index) => (
-            <motion.div key={index} className="perks_box"
+            <motion.div
+              key={index}
+              className="perks_box"
               initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1}}
-              transition={{ duration: 0.5, ease: "easeOut" }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.5, ease: 'easeOut' }}
               viewport={{ once: true, amount: 0.5 }}
             >
               <img
