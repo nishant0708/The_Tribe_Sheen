@@ -60,7 +60,7 @@ const slides = [
 ]
 function Teams() {
   const prevRef = useRef(null);
-    const nextRef = useRef(null);
+  const nextRef = useRef(null);
   return (
     <div className="ourteams">
       <motion.img
@@ -83,15 +83,15 @@ function Teams() {
           viewport={{ once: true, amount: 0.3 }}
         >
           <Swiper
-          modules={[Navigation, Pagination, Autoplay]}
-          style={{
-            "--swiper-navigation-color": "#ff9bbd",
-            "--swiper-navigation-size": "8px",
-        }}
+            modules={[Navigation, Pagination, Autoplay]}
+            style={{
+              "--swiper-navigation-color": "#ff9bbd",
+              "--swiper-navigation-size": "8px",
+            }}
             spaceBetween={50}
             slidesPerView={1}
             navigation
-                    pagination={{ clickable: true }}
+            pagination={{ clickable: true }}
             loop={true}
             autoplay={false}
           >
@@ -114,12 +114,12 @@ function Teams() {
               </SwiperSlide>
             ))}
           </Swiper>
-          <div className="custom-navigation">
-                    <button ref={prevRef} className="nav-button prev">&lt;</button>
-                    <button ref={nextRef} className="nav-button next">&gt;</button>
-                </div>
         </motion.div>
       </div>
+        <div className="custom-navigation">
+          <button ref={prevRef} className="nav-button prev">&lt;</button>
+          <button ref={nextRef} className="nav-button next">&gt;</button>
+        </div>
     </div>
   )
 }
