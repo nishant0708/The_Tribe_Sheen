@@ -56,7 +56,7 @@
   width: max-content;
   font-size: 1rem;
 }
-.teams-carousel{
+.teams-carousel {
   width: 80%;
   margin: auto;
 }
@@ -225,18 +225,17 @@
   .heading {
     font-size: 36px;
   }
-  .swiper{
+  .swiper {
     overflow: visible !important ;
   }
-  .swiper-button-next{
-    right: -25px;
+  .swiper-button-next {
+    right: -10px;
     margin: 0rem;
-
   }
-.swiper-button-prev {
+  .swiper-button-prev {
     margin: 0rem;
     left: -25px;
-}
+  }
 }
 
 @media (max-width: 500px) {
