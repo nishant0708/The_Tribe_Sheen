@@ -7,7 +7,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay, Navigation, Pagination } from 'swiper/modules'
 import 'swiper/css'
 
-import Vinita from '../assets/vinita.png'
+import Vinita from '../assets/dr_vinita(1).png'
 import Yogita from '../assets/yogita.png'
 import Vrinda from '../assets/vrinda.png'
 import Saanwari from '../assets/saanwari.png'
