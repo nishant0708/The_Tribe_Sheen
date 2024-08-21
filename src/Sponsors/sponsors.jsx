@@ -3,12 +3,14 @@ import './sponsors.css';
 import sponsor1 from '../assets/s(1).png';
 import sponsor2 from '../assets/s(2).png';
 import sponsor3 from '../assets/s(3).png';
+import sponsor4 from '../assets/s(4).png';
 import Bow from '../assets/pinkbow.png';
 import {motion} from 'framer-motion'
 const sponsors = [
   { id: 1, name: 'Sponsor 1', imgSrc: sponsor1 },
   { id: 2, name: 'Sponsor 2', imgSrc: sponsor2 },
   { id: 3, name: 'Sponsor 3', imgSrc: sponsor3 },
+  { id: 4, name: 'Sponsor 4', imgSrc: sponsor4 },
 ];
 
 const Sponsors = () => {
