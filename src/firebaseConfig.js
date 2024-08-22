@@ -1,20 +1,23 @@
-// firebaseConfig.js
 import { initializeApp } from 'firebase/app'
 import { getDatabase } from 'firebase/database'
-import { getStorage } from 'firebase/storage' // Import Firebase Storage
+import { getStorage } from 'firebase/storage'
+import { getAuth, GoogleAuthProvider } from 'firebase/auth'
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyBaZV-1N99JmM71XEwCAwFq4gxz1KNQTKY',
-  authDomain: 'tribe-sheen.firebaseapp.com',
-  projectId: 'tribe-sheen',
-  storageBucket: 'tribe-sheen.appspot.com',
-  messagingSenderId: '440631172383',
-  appId: '1:440631172383:web:c86fa386220d76bd37a42a',
-  measurementId: 'G-GRERM7NN5B',
+  // your config
+  apiKey: 'AIzaSyBEBhBv7AcPhmWS1JwfXijBEarDjsz16xM',
+  authDomain: 'lupo-7ba5f.firebaseapp.com',
+  databaseURL: 'https://lupo-7ba5f-default-rtdb.firebaseio.com',
+  projectId: 'lupo-7ba5f',
+  storageBucket: 'lupo-7ba5f.appspot.com',
+  messagingSenderId: '418172032930',
+  appId: '1:418172032930:web:b28842c67139e5c0e6c4fb',
+  measurementId: 'G-1NVNFSWR1M',
 }
 
 const app = initializeApp(firebaseConfig)
 const database = getDatabase(app)
-const storage = getStorage(app) // Initialize Firebase Storage
+const storage = getStorage(app)
+const auth = getAuth(app) // Initialize Firebase Auth
 
-export { database, storage } // Export both database and storage
+export { database, storage, auth, GoogleAuthProvider }
