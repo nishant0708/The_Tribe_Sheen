@@ -8,26 +8,18 @@ import { Autoplay, Navigation, Pagination } from 'swiper/modules'
 import 'swiper/css'
 
 import Vinita from '../assets/dr_vinita(1).png'
-import Yogita from '../assets/yogita.png'
+
 import Vrinda from '../assets/vrinda.png'
 import Saanwari from '../assets/saanwari.png'
 import Nidhi from '../assets/nidhi.png'
-import Bhavana from '../assets/bhavana.png'
 
 const slides = [
   {
-    name: 'Dr.Vinita Raj',
+    name: 'Dr. Vinita Raj',
     position: 'Founder',
     description:
       'Dr. Vinita Raj, a dynamic entrepreneur and the visionary behind *Word Dealers Pvt. Ltd., is a force to be reckoned with. She has started her career with IIM Indore and Narsee Monjee, Mumbai. Beyond her business acumen, Dr. Raj harbors a deep passion for fashion, a passion that culminated in her crowning as Mrs. Chennai 2023. She is also a Fashion Brand Ambassador of Research Foundation of India in 158 Countries. Multifaceted career as an entrepreneur, orator, and advocate is marked by a steadfast commitment to women&apos;s empowerment. Implementing a pioneering work-from-home policy exclusively for women at Word Dealers, Dr. Raj has carved a niche for herself as a champion of gender equality. This innovative approach has garnered international acclaim, with invitations to speak at the US Consulate and recognition as one of SheInspires, England Top 6 Change Making Women Entrepreneurs globally. Her exceptional leadership was further validated by the prestigious Economic Times Women Entrepreneur of the Year 2022 award.',
     image: Vinita,
-  },
-  {
-    name: 'Saanwari Sidhwani',
-    position: 'Project Head',
-    description:
-      "As the CEO of Word Dealers Pvt. Ltd., the World's First All-Female Localization Company, she leads an innovative team dedicated to Empowering Women through Translation, Lingual Escorting, and Simultaneous Interpretation. With a creative flair for Fashion Designing, Jewellery Creation, Art, and Content Development, she showcases a Diverse Artistic Ability that sets her apart in the industry. Additionally, she is a Trained Classical Singer with over Seven years of experience and a Skilled Dancer. Her strong Communication and Public Speaking skills have earned her significant achievements, including being a Dignitary at Columbia University alongside Ms. Evelin Lindner, a three-time Nobel Peace Prize nominee, participating in the Generation Equality Forum in Paris (2021), and Competing in Regional-Level Debate Competitions.",
-    image: Saanwari,
   },
   {
     name: 'Nidhi Hasija',
@@ -37,25 +29,19 @@ const slides = [
     image: Nidhi,
   },
   {
-    name: 'Yogita Thakur',
-    position: 'CRM',
+    name: 'Saanwari Sidhwani',
+    position: 'Project Head',
     description:
-      "Miss Yogita Thakur, a graduate of St. Paul Institute of Professional Studies, Indore, is a dedicated professional with a keen eye for detail and a passion for continuous learning. Her customized approach to tasks has proven invaluable at Word Dealers Pvt Ltd, where she has excelled for over a year. With exceptional research and communication skills, Yogita has successfully expanded the company's market reach. Her expertise in customer relationship management makes her uniquely qualified to guide and support beauty pageant contestants, understanding their specific needs and aspirations.",
-    image: Yogita,
+      "As the CEO of Word Dealers Pvt. Ltd., the World's First All-Female Localization Company, she leads an innovative team dedicated to Empowering Women through Translation, Lingual Escorting, and Simultaneous Interpretation. With a creative flair for Fashion Designing, Jewellery Creation, Art, and Content Development, she showcases a Diverse Artistic Ability that sets her apart in the industry. Additionally, she is a Trained Classical Singer with over Seven years of experience and a Skilled Dancer. Her strong Communication and Public Speaking skills have earned her significant achievements, including being a Dignitary at Columbia University alongside Ms. Evelin Lindner, a three-time Nobel Peace Prize nominee, participating in the Generation Equality Forum in Paris (2021), and Competing in Regional-Level Debate Competitions.",
+    image: Saanwari,
   },
+
   {
     name: 'Vrinda Meena',
     position: 'Senior Makeover Consultant',
     description:
       'Vrinda Meena, a highly skilled makeup artist, has been crafting stunning looks for over 12 years. Her expertise extends beyond makeup to encompass hair and skin care, making her a well-rounded beauty expert. Recognized for her exceptional talent, Vrinda has been honored with prestigious awards including the Talent Award, Best Makeup Artist Award, Educator Award, and Achievement Award. Her work has garnered admiration from renowned celebrities such as Raveena Tandon, Bhagyashree, Sneha Ullal, and Ishani Koppikar, solidifying her position as a leading figure in the beauty industry.',
     image: Vrinda,
-  },
-  {
-    name: 'Bhavana Savdekar',
-    position: 'CRM',
-    description:
-      'Bhavana with a B.Com in Sales from Radiant Institute of Management and Science, she brings valuable experience as a Language Coordinator - Domestic at Word Dealers. Her expertise in communication and coordination has prepared her for her new role as a CRM at Tribe Sheen, where she will continue to excel and contribute to customer relationship management.',
-    image: Bhavana,
   },
 ]
 function Teams() {
