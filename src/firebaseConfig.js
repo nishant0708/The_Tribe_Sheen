@@ -7,6 +7,7 @@ const firebaseConfig = {
   // your config
   apiKey: 'AIzaSyBaZV-1N99JmM71XEwCAwFq4gxz1KNQTKY',
   authDomain: 'tribe-sheen.firebaseapp.com',
+  databaseURL: 'https://tribe-sheen-default-rtdb.firebaseio.com',
   projectId: 'tribe-sheen',
   storageBucket: 'tribe-sheen.appspot.com',
   messagingSenderId: '440631172383',
