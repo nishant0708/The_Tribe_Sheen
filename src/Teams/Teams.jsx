@@ -8,7 +8,7 @@ import { Autoplay, Navigation, Pagination } from 'swiper/modules'
 import 'swiper/css'
 
 import Vinita from '../assets/dr_vinita(1).png'
-
+import Ravina from '../assets/Ravina.png'
 import Vrinda from '../assets/vrinda.png'
 import Saanwari from '../assets/saanwari.png'
 import Nidhi from '../assets/nidhi.png'
@@ -42,6 +42,13 @@ const slides = [
     description:
       'Vrinda Meena, a highly skilled makeup artist, has been crafting stunning looks for over 12 years. Her expertise extends beyond makeup to encompass hair and skin care, making her a well-rounded beauty expert. Recognized for her exceptional talent, Vrinda has been honored with prestigious awards including the Talent Award, Best Makeup Artist Award, Educator Award, and Achievement Award. Her work has garnered admiration from renowned celebrities such as Raveena Tandon, Bhagyashree, Sneha Ullal, and Ishani Koppikar, solidifying her position as a leading figure in the beauty industry.',
     image: Vrinda,
+  },
+  {
+    name: 'Ravina Kalra',
+    position: 'CRM',
+    description:
+      'She brings over seven years of experience in the education sector, with a strong background in sales, counseling, team management, recruitment, and channel development. She has held leadership roles at top institutions such as IEPS, NMIMS Global, and Swastika Education Institute, where she consistently achieved and exceeded targets. Ravina\'s expertise in managing center operations, developing strategies, and building relationships has been instrumental in her success. As the CRM of Tribe Sheen, she is committed to leveraging her skills to ensure the pageant\'s success and the growth of its participants.',
+    image: Ravina,
   },
 ]
 function Teams() {
