@@ -8,7 +8,7 @@ import { Autoplay, Navigation, Pagination } from 'swiper/modules'
 import 'swiper/css'
 import { FaInstagram } from 'react-icons/fa6'
 import Vinita from '../assets/dr_vinita(1).png'
-
+import Ravina from '../assets/Ravina.png'
 import Vrinda from '../assets/vrinda.png'
 import Saanwari from '../assets/saanwari.png'
 import Nidhi from '../assets/nidhi.png'
@@ -49,6 +49,13 @@ const slides = [
     image: Vrinda,
     instagram:
       'https://www.instagram.com/pari_makeover_studio_academy?igsh=Mzhqbmw3ZGI4OHpz',
+  },
+  {
+    name: 'Ravina Kalra',
+    position: 'CRM',
+    description:
+      'She brings over seven years of experience in the education sector, with a strong background in sales, counseling, team management, recruitment, and channel development. She has held leadership roles at top institutions such as IEPS, NMIMS Global, and Swastika Education Institute, where she consistently achieved and exceeded targets. Ravina\'s expertise in managing center operations, developing strategies, and building relationships has been instrumental in her success. As the CRM of Tribe Sheen, she is committed to leveraging her skills to ensure the pageant\'s success and the growth of its participants.',
+    image: Ravina,
   },
 ]
 function Teams() {
