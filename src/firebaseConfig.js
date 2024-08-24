@@ -5,14 +5,14 @@ import { getAuth, GoogleAuthProvider } from 'firebase/auth'
 
 const firebaseConfig = {
   // your config
-  apiKey: 'AIzaSyBaZV-1N99JmM71XEwCAwFq4gxz1KNQTKY',
-  authDomain: 'tribe-sheen.firebaseapp.com',
-  databaseURL: 'https://tribe-sheen-default-rtdb.firebaseio.com',
-  projectId: 'tribe-sheen',
-  storageBucket: 'tribe-sheen.appspot.com',
-  messagingSenderId: '440631172383',
-  appId: '1:440631172383:web:c86fa386220d76bd37a42a',
-  measurementId: 'G-GRERM7NN5B',
+  apiKey: 'AIzaSyBEBhBv7AcPhmWS1JwfXijBEarDjsz16xM',
+  authDomain: 'lupo-7ba5f.firebaseapp.com',
+  databaseURL: 'https://lupo-7ba5f-default-rtdb.firebaseio.com',
+  projectId: 'lupo-7ba5f',
+  storageBucket: 'lupo-7ba5f.appspot.com',
+  messagingSenderId: '418172032930',
+  appId: '1:418172032930:web:b28842c67139e5c0e6c4fb',
+  measurementId: 'G-1NVNFSWR1M',
 }
 
 const app = initializeApp(firebaseConfig)
