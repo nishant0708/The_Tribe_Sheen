@@ -107,7 +107,7 @@ const Contact = () => {
                 <div>
                   <IoCall />
                 </div>
-                +91 9399425972
+                +91 9770566800
               </li>
             </ul>
           </div>
