@@ -10,8 +10,9 @@ import PinkFlwrDown from '../assets/pinkflwr.png'
 import { motion } from 'framer-motion'
 
 import Update1 from '../assets/update1.png'
+import update2 from '../assets/update2.png'
 
-const updates = [Update1]
+const updates = [update2, Update1]
 
 export default function Updates() {
   const prevRef = useRef(null)
@@ -57,7 +58,7 @@ export default function Updates() {
           navigation
           pagination={{ clickable: true }}
           loop={true}
-          autoplay={{ delay: 3000 }}
+          autoplay={{ delay: 8000 }}
         >
           {updates.map((update, index) => (
             <SwiperSlide key={index}>
