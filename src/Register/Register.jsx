@@ -701,8 +701,7 @@ const Register = () => {
                 required
               >
                 <option value="">Pick a date</option>
-                <option value="31 August">31 August 2024</option>
-                <option value="1 September">1 September 2024</option>
+                <option value="September">September</option>
               </select>
             </div>
 
