@@ -8,7 +8,7 @@ const videoUrls = [
 
 const Join = () => {
   return (
-    <div className="sponsor-main">
+    <div className="sponsor-main joinus">
       <div className="video-block">
         {/* Animate the heading */}
         <motion.h1

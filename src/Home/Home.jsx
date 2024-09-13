@@ -22,10 +22,11 @@ const Home = () => {
       <Navbar />
       <Dashboard />
       <About />
-      <Join />
+
       <Perks />
       <Sponsors />
       <Teams />
+      <Join />
       <Updates />
       <Contact />
       <div className="newspaper-container">
