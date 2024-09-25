@@ -5,6 +5,20 @@ import { database } from './firebaseConfig'
 import Home from './Home/Home'
 import Register from './Register/Register'
 import MobileNumberModal from './MobileNumberModal'
+import { useLocation } from 'react-router-dom'
+
+const ScrollToTop = () => {
+  const { pathname } = useLocation()
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth', // Adds smooth scrolling
+    })
+  }, [pathname])
+
+  return null
+}
 
 const App = () => {
   const [user, setUser] = useState(null)
@@ -39,11 +53,11 @@ const App = () => {
 
   return (
     <Router>
+      <ScrollToTop /> {/* Ensure pages open from the top */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/register" element={<Register />} />
       </Routes>
-
       {/* Show mobile number modal if user is not found in localStorage */}
       {isModalOpen && (
         <MobileNumberModal onSubmitMobileNumber={handleMobileNumberSubmit} />

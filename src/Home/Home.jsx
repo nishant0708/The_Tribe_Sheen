@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { motion } from 'framer-motion'
 import About from '../About/About'
 import Contact from '../Contact/Contact'
@@ -16,6 +16,11 @@ import { Dashboard } from '../Dashboard/Dashboard'
 import Join from '../Why_to_Join_Us/Join'
 
 const Home = () => {
+  // Scroll to top when the component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   return (
     <div className="home" id="home">
       <Loader />
