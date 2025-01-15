@@ -57,7 +57,7 @@
     "react-dropzone": "^14.2.3",
     "react-easy-crop": "^5.0.8",
     "react-router-dom": "^6.25.1",
-    "react-toastify": "^10.0.5"
+    "react-toastify": "^11.0.2"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx,css,scss,md}": [
