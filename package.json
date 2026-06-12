@@ -45,7 +45,7 @@
     ]
   },
   "devDependencies": {
-    "emailjs": "^4.0.3",
+    "emailjs": "^5.0.1",
     "emailjs-com": "^3.2.0",
     "eslint": "^8.57.0",
     "eslint-plugin-react": "^7.35.0",
